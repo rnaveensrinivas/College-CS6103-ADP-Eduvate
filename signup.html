@@ -9,7 +9,15 @@
     <body onload="newcaptcha()">
         <h3 style="text-align: center;">Sign up page</h3>
         <table>
-        <form>
+        <form method="POST" action="signup.php">
+            <tr>
+                <td>
+                    <label for="em">E mail</label><br>
+                </td>
+                <td>
+                    <input type = "email" id="em" name="em"><br>     
+                </td>
+            </tr>
             <tr>
                 <td>
                     <label for="fname">First Name</label><br>
@@ -53,7 +61,7 @@
                     <label for="uid">College ID</label><br>
                 </td>
                 <td>
-                    <input type="number" min="1000000000" max="9999999999"><br>
+                    <input type="number" name="uid" min="1000000000" max="9999999999"><br>
                 </td>
 
             </tr>
