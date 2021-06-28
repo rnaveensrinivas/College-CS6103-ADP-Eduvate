@@ -18,18 +18,7 @@
                     <td><input type="password" id="pwd1"></td>
                 </tr>
                 
-                <tr>
-                    <td>
-                        <div id="refresh"> 
-                            <input type="text" id="capt" readonly onclick="captcha()">
-                            <img src="refresh.png" width="30px"> 
-                        </div>
-                    </td>
-                    <td> 
-                        <input type="text" id="textinput">
-                        <button onclick="validcaptcha()">Check</button>
-                    </td>
-                </tr>
+                
 
                 <tr>
                     <td colspan="2">
@@ -41,32 +30,5 @@
             </table>
         </form>
 
-        <script type="text/javascript">
-            function captcha(){ 
-
-                var alphabet = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z" , "a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z","1","2","3","4","5","6","7","8","9","0"];
-                var a = alphabet[Math.floor(Math.random()*62)] ; 
-                var b = alphabet[Math.floor(Math.random()*62)] ; 
-                var c = alphabet[Math.floor(Math.random()*62)] ; 
-                var d = alphabet[Math.floor(Math.random()*62)] ; 
-                var e = alphabet[Math.floor(Math.random()*62)] ; 
-                
-                var captcha_word = a+b+c+d+e+f ;
-
-                document.getElementById('capt').innerHTML= captcha_word; 
-            }
-
-            function validcaptcha(){ 
-                var string1 = document.getElementById('capt').value ; 
-                var string2 = document.getElementById('textinput').value ; 
-
-                if( string1 != string2 ){ 
-                    alert("Captcha don't match"); 
-                    return false ;
-                }
-
-            }
-
-    </script>
     </body>
 </html>

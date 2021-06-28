@@ -11,33 +11,3 @@ a {
     text-decoration: none;
 }
 
-
-#capt{ 
-    width: 70px;
-    height: 32px;
-    font-size: 30px;
-    background-color: #2C31CF;
-    padding: 5px;
-    letter-spacing: 1px;
-    color: #E9E91D;
-}
-
-#refresh{ 
-    background-color: #2C31CF;
-}
-
-#refresh img{ 
-    margin-top: 10px ;
-    cursor: pointer;
-}
-
-#txtinput { 
-    width: 70px;
-    height: 32px;
-    font-size: 30px;
-    background-color: #252521;
-    margin-left: 10px ;
-    padding: 5px  ;
-    color: #D5BA1E;
-
-}
