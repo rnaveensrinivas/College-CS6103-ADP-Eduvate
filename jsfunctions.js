@@ -8,7 +8,6 @@ function newcaptcha(){
     var e = alphabets[ Math.floor(Math.random()* 62) ];
     var f = alphabets[ Math.floor(Math.random()* 62) ];
 
-    
     var captcha = a + b + c + d + e + f; 
 
     document.getElementById('captcha').value = captcha ; 
@@ -17,7 +16,6 @@ function newcaptcha(){
 
 function validcap(){ 
     var captcha = document.getElementById('captcha').value ; 
-    
     var enteredCaptcha = document.getElementById('enteredCaptcha').value ; 
 
     if( !enteredCaptcha ){ 
