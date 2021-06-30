@@ -1,0 +1,19 @@
+{
+  "name": "eduvate-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "AgoraRTCSDK-3.3.1.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Trio-of-processors/Eduvate-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Trio-of-processors/Eduvate-app/issues"
+  },
+  "homepage": "https://github.com/Trio-of-processors/Eduvate-app#readme"
+}
