@@ -15,6 +15,8 @@ function newCaptcha(){
 }
 
 function validCaptcha(){ 
+
+    checkPassword() ; // application of stack. 
     var captcha = document.getElementById('captcha').value ; 
     var enteredCaptcha = document.getElementById('enteredCaptcha').value ; 
 
@@ -34,8 +36,5 @@ function checkPassword() {
 
     if(p1 != p2) {
         alert("Check your password again!");
-    }
-    else {
-        alert("Details have been submitted successfully!");
     }
 }

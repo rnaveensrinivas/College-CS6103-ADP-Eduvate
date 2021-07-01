@@ -14,7 +14,7 @@
                     Take me to signup page : 
                 </td>
                 <td>
-                    <Button onclick="location.href='1Level/signup.html'">Signup</Button>
+                    <Button onclick="location.href='1Level/signup.php'">Signup</Button>
                 </td>
             </tr>
 
@@ -23,7 +23,7 @@
                     Take me to login page : 
                 </td>
                 <td>
-                    <Button onclick="location.href='1Level/login.html'">login</Button>
+                    <Button onclick="location.href='1Level/login.php'">login</Button>
                 </td>
             </tr>
 

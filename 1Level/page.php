@@ -37,6 +37,6 @@ if(isset($_GET['Vkey'])){
 <!doctype html>
 <html>
     <body>
-        <button onclick="location.href='login.html'">login</button> verified.
+        <button onclick="location.href='login.php'">login</button>
     </body>
 </html>
