@@ -2,8 +2,8 @@
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Jun 28, 2021 at 08:01 PM
+-- Host: 127.0.0.1
+-- Generation Time: Jul 01, 2021 at 11:03 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -18,16 +18,16 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `Eduvate`
+-- Database: `eduvate`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `Users`
+-- Table structure for table `users`
 --
 
-CREATE TABLE `Users` (
+CREATE TABLE `users` (
   `Email` text NOT NULL,
   `FirstName` text NOT NULL,
   `LastName` text NOT NULL,
@@ -35,24 +35,20 @@ CREATE TABLE `Users` (
   `Role` text NOT NULL,
   `CollegeID` bigint(100) NOT NULL,
   `Department` text NOT NULL,
-  `Password` text NOT NULL
+  `Password` text NOT NULL,
+  `Vkey` varchar(45) NOT NULL,
+  `Verified` tinyint(1) NOT NULL,
+  `CreatedDate` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `Users`
---
-
-INSERT INTO `Users` (`Email`, `FirstName`, `LastName`, `College`, `Role`, `CollegeID`, `Department`, `Password`) VALUES
-('rnaveen@gmail.com', 'Naveen', 'Genius', 'CEG', 'student', 1000000000, 'CSE', '123');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `Users`
+-- Indexes for table `users`
 --
-ALTER TABLE `Users`
+ALTER TABLE `users`
   ADD PRIMARY KEY (`Email`(100));
 COMMIT;
 

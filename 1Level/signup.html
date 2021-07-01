@@ -14,7 +14,7 @@
         <form method="POST" action="signup.php" onsubmit="return validCaptcha()">
 
             <tr>
-                <td><label for="em">E mail</label></td>
+                <td><label for="em">E-mail</label></td>
                 <td><input type = "email" id="em" name="em" required></td>
             </tr>
 
@@ -35,10 +35,12 @@
             </tr>
 
             <tr>
-                <td><label for = "categ">Choose</label></td>
+                <td>Choose</td>
                 <td>
-                    <input type="radio" name="categ" value="student">Student
-                    <input type="radio" name="categ" value="teacher">Teacher
+                    <input type="radio" name="categ" id="student" value="student">
+                    <label for='student'>Student</label>
+                    <input type="radio" name="categ" id="teacher" value="teacher">
+                    <label for='teacher'>Teacher</label>
                 </td>
             </tr>
 

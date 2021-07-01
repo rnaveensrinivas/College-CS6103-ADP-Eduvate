@@ -28,10 +28,6 @@ if(isset($_GET['Vkey'])){
         echo "This account invalid or already verified. " ; 
     }
 
-
-
-
-
 }else{ 
     die("Something went wrong. Invalid access detected.") ; 
 }
