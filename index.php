@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Homepage</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="1Level/stylesheet.css">
         
     </head>
 
@@ -14,7 +14,7 @@
                     Take me to signup page : 
                 </td>
                 <td>
-                    <Button onclick="location.href='signup.html'">Signup</Button>
+                    <Button onclick="location.href='1Level/signup.html'">Signup</Button>
                 </td>
             </tr>
 
@@ -23,7 +23,7 @@
                     Take me to login page : 
                 </td>
                 <td>
-                    <Button onclick="location.href='login.html'">login</Button>
+                    <Button onclick="location.href='1Level/login.html'">login</Button>
                 </td>
             </tr>
 
@@ -32,7 +32,7 @@
                     What to know more about the app : 
                 </td>
                 <td>
-                    <Button onclick="location.href=''">about</Button>
+                    <Button onclick="location.href='1Level/about.html'">about</Button>
                 </td>
             </tr>
 
