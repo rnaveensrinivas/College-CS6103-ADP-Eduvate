@@ -1,4 +1,4 @@
-function newcaptcha(){ 
+function newCaptcha(){ 
     var alphabets = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890'.split('');
 
     var a = alphabets[ Math.floor(Math.random()* 62) ];
@@ -14,12 +14,13 @@ function newcaptcha(){
      
 }
 
-function validcap(){ 
+function validCaptcha(){ 
     var captcha = document.getElementById('captcha').value ; 
     var enteredCaptcha = document.getElementById('enteredCaptcha').value ; 
 
-    if( !enteredCaptcha ){ 
+    if( enteredCaptcha == '' ){ 
         alert("Enter the captcha.") ; 
+        return false ; 
     }
     else if( captcha != enteredCaptcha ){ 
         alert("Wrong captcha Try again.") ; 

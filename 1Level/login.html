@@ -3,16 +3,16 @@
     <head>
         <title>Login Page</title> 
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <script src="jsfunctions.js"></script>
+        <script src="valid.js"></script>
     </head>
 
-    <body onload="newcaptcha()">
+    <body onload="newCaptcha()">
 
-        <form action="" method="POST">
+        <form action="" method="POST" onsubmit="return validCaptcha();">
             <table>
                 <tr>
                     <td><label for="email">Email : </label></td>
-                    <td><input type="email" id="email"></td>
+                    <td><input type="email" id="em"></td>
                 </tr>
                 <tr>
                     <td><label for="pwd1">Password : </label></td>
@@ -21,16 +21,15 @@
 
                 <tr>
                     <td>
-                        <button type="button" onclick="newcaptcha()">New Captcha</button><br>
+                        <button type="button" onclick="newCaptcha()">New Captcha</button><br>
                         <input type="text" readonly id="captcha" size="9" style="text-align: center;"> 
                     </td>
-
                     <td><input type="text" id="enteredCaptcha"></td>
                 </tr>
 
                 <tr>
                     <td colspan="2">
-                    <button type="submit" onclick="return validcap()">Login</button><br>
+                    <input type="submit" value="Login"><br>
                     <a href="resetpassword.html">Forgot Password ? </a>
                     </td>
                 </tr>

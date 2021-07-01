@@ -3,19 +3,19 @@
     <head>
         <title>Signup page</title>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
-        <script src="jsfunctions.js"></script>
+        <script src="valid.js"></script>
     </head>
 
 
-    <body onload="newcaptcha()">
+    <body onload="newCaptcha()">
         <h3 style="text-align: center;">Sign up page</h3>
 
         <table>
-        <form method="POST" action="signup.php">
+        <form method="POST" action="signup.php" onsubmit="return validCaptcha()">
 
             <tr>
                 <td><label for="em">E mail</label></td>
-                <td><input type = "email" id="em" name="em"></td>
+                <td><input type = "email" id="em" name="em" required></td>
             </tr>
 
             <tr>
@@ -65,14 +65,14 @@
 
             <tr>
                 <td>
-                    <button type="button" onclick="newcaptcha()">New Captcha</button><br>
+                    <button type="button" onclick="newCaptcha()">New Captcha</button><br>
                     <input type="text" readonly id="captcha" size="9" style="text-align: center;"> 
                 </td>
                 <td><input type="text" id="enteredCaptcha"></td>
             </tr>
 
             <tr>
-                <td colspan="2"><button type="submit" onclick="validcap() ; checkPassword()">Submit</button></td>
+                <td colspan="2"><input type="submit" value='Create Account' name="submit"></td>
             </tr>
 
         </form>
