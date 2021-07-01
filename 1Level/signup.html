@@ -6,91 +6,61 @@
         <script src="jsfunctions.js"></script>
     </head>
 
+
     <body onload="newcaptcha()">
         <h3 style="text-align: center;">Sign up page</h3>
+
         <table>
         <form method="POST" action="signup.php">
+
             <tr>
-                <td>
-                    <label for="em">E mail</label><br>
-                </td>
-                <td>
-                    <input type = "email" id="em" name="em"><br>     
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <label for="fname">First Name</label><br>
-                </td>
-                <td>
-                    <input type = "text" id="fname" name="fname"><br>     
-                </td>
+                <td><label for="em">E mail</label></td>
+                <td><input type = "email" id="em" name="em"></td>
             </tr>
 
             <tr>
-                <td>
-                    <label for="lname">Last Name</label><br>
-                </td>
-                <td>
-                    <input type = "text" id="lname" name="lname"><br>
-                </td>
+                <td><label for="fname">First Name</label></td>
+                <td><input type = "text" id="fname" name="fname"></td>
+            </tr>
+
+            <tr>
+                <td><label for="lname">Last Name</label></td>
+                <td><input type = "text" id="lname" name="lname"></td>
 
             </tr>
             
             <tr>
-                <td>
-                    <label for="col">College</label><br>
-                </td>
-                <td>
-                    <input type = "text" id="col" name="col"><br>
-                </td>
+                <td><label for="col">College</label></td>
+                <td><input type = "text" id="col" name="col"></td>
             </tr>
 
             <tr>
-                <td>
-                    <label for = "categ">Choose</label><br>
-                </td>
+                <td><label for = "categ">Choose</label></td>
                 <td>
                     <input type="radio" name="categ" value="student">Student
-                    <input type="radio" name="categ" value="teacher">Teacher</radio><br>
+                    <input type="radio" name="categ" value="teacher">Teacher
                 </td>
             </tr>
 
             <tr>
-                <td>
-                    <label for="uid">College ID</label><br>
-                </td>
-                <td>
-                    <input type="number" name="uid" min="1000000000" max="9999999999"><br>
-                </td>
+                <td><label for="uid">College ID</label></td>
+                <td><input type="number" name="uid" min="1000000000" max="9999999999"></td>
 
             </tr>
 
             <tr>
-                <td>
-                    <label for="dept">Department</label><br>
-                </td>
-                <td>
-                    <input type ="text" name="dept" id="dept"><br>
-                </td>
+                <td><label for="dept">Department</label></td>
+                <td><input type ="text" name="dept" id="dept"></td>
             </tr>
 
             <tr>
-                <td>
-                    <label for="pwd1">Password</label><br>
-                </td>
-                <td>
-                    <input type="password" id="pwd1" name="pwd1"><br>
-                </td>
+                <td><label for="pwd1">Password</label></td>
+                <td><input type="password" id="pwd1" name="pwd1"></td>
             </tr>
 
             <tr>
-                <td>
-                    <label for="pwd2">Confirm Password</label><br>
-                </td>
-                <td>
-                    <input type="password" id="pwd2" name="pwd2"><br>
-                </td>
+                <td><label for="pwd2">Confirm Password</label></td>
+                <td><input type="password" id="pwd2" name="pwd2"></td>
             </tr>
 
             <tr>
@@ -98,15 +68,11 @@
                     <button type="button" onclick="newcaptcha()">New Captcha</button><br>
                     <input type="text" readonly id="captcha" size="9" style="text-align: center;"> 
                 </td>
-
                 <td><input type="text" id="enteredCaptcha"></td>
             </tr>
 
             <tr>
-                <td colspan="2">
-                 <button type="submit" onclick="validcap() ; checkPassword()">Submit</button>
-                    
-                </td>
+                <td colspan="2"><button type="submit" onclick="validcap() ; checkPassword()">Submit</button></td>
             </tr>
 
         </form>
