@@ -10,6 +10,12 @@
     "type": "git",
     "url": "git+https://github.com/Trio-of-processors/Eduvate-app.git"
   },
+  "dependencies": {
+    "agora-rtm-sdk": "1.4.3",
+    "webpack": "5.28.0",
+    "webpack-dev-server": "3.11.2",
+    "webpack-cli": "4.5.0"
+  },
   "author": "",
   "license": "ISC",
   "bugs": {
