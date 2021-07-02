@@ -15,7 +15,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
   $conn = NEW mysqli($servername, $username, $password, $dbname);
   // Check connection
   if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+      die(" Hello Connection failed: " . $conn->connect_error);
   } 
 
 
