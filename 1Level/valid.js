@@ -16,7 +16,11 @@ function newCaptcha(){
 
 function validCaptcha(){ 
 
-    checkPassword() ; // application of stack. 
+    var check = checkPassword() ; // application of stack. 
+    if (!check ){ 
+        return false ; 
+    }
+
     var captcha = document.getElementById('captcha').value ; 
     var enteredCaptcha = document.getElementById('enteredCaptcha').value ; 
 
@@ -35,6 +39,8 @@ function checkPassword() {
     var p2 = document.getElementById("pwd2").value;
 
     if(p1 != p2) {
-        alert("Check your password again!");
+        alert("Passwords don't match");
+        return false ; 
     }
+    return true ; 
 }
