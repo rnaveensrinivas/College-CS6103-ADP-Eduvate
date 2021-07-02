@@ -1,12 +1,71 @@
-<!DOCTYPE html>
-<html>
-    <body>
-        Please check your mail to proceed with password reset. 
-    </body>
-</html>
-
 <?php
-    $em = $_POST['em'] ; 
-    mail($em, 'subject : Hello' , 'message : Hello there.' ,'From: appeduvate@gmail.com');
+
+include '../config.php';
+
+if( isset($_POST['submit'])){ //Checking if the form is submitted. 
+
+
+    $conn = NEW mysqli($servername, $username, $password, $dbname);
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    } 
+
+    $em= $conn->real_escape_string($_POST["em"]); //getting the mail and sanitiziing it.
+  
+
+    $checkMailIfExists = "SELECT * FROM users WHERE Email = '$em'" ; //Checking if email already exists. 
+    $mailResult = mysqli_query($conn , $checkMailIfExists) ; 
+
+
+    if( $mailResult->fetch_assoc()){
+        $to = $em ; 
+        $subject = "Reset Password." ; 
+        // I am sending $vkey along with the page in mail.
+        $message = "<p>Hi thanks for approaching Eduvate support to change account password please click <a href='http://localhost/Eduvate-app/1Level/password.php?em=$em'>Here</a></p>" ; 
+        $headers = "From: appeduvate@gmail.com \r\n" ; //App i am send form. 
+        $headers .= "MIME-Version: 1.0" . "\r\n" ; // \r - return carriage || \n - newline 
+        $headers .= "Content-type:text/html;charset=UTF-8". "\r\n" ; 
+
+        mail($to , $subject , $message, $headers) ; 
+
+        header('location:thankyou.php');
+    } 
+    else{    
+        echo "<script>alert('This Email invalid. Go to Signup page.')</script>" ; 
+    }  
+  $conn->close();
+}
+
 
 ?>
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    </head>
+    <body>
+        <form action="" method="POST">
+            <table>
+                <tr>
+                    <td colspan = "2">Enter your email address to<br> verify and change password.</td>
+                </tr>
+                <tr>
+                    <td>
+                        Email : 
+                    </td>
+                    <td>
+                        <input type="email" name="em" >
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button type="submit" name="submit">Send Mail</button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>

@@ -73,7 +73,7 @@ if ( isset($_POST['submit'])){
                 <tr>
                     <td colspan="2">
                     <input type="submit" value="Login" name="submit"><br>
-                    <a href="resetpassword.html">Forgot Password ? </a>
+                    <a href="resetpassword.php">Forgot Password ? </a>
                     </td>
                 </tr>
             </table>

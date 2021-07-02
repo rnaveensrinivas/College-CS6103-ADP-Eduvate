@@ -2,7 +2,6 @@
 
 include '../config.php';
 
- 
 $error = " " ;
 
 if( isset($_POST['submit'])){ //Checking if the form is submitted. 
@@ -20,11 +19,8 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
   } 
 
 
-  
-
-
   $checkMailIfExists = "SELECT * FROM users WHERE Email = '$em'" ; //Checking if email already exists. 
-  $checkCollegeIDIfExists = "SELECT * FROM users WHERE CollegeID = '$uid'" ; //Checking if email already exists. 
+  $checkCollegeIDIfExists = "SELECT * FROM users WHERE CollegeID = '$uid'" ; //Checking if College ID already exists. 
   $mailResult = mysqli_query($conn , $checkMailIfExists) ; 
   $collegeIDResult =  mysqli_query($conn , $checkCollegeIDIfExists) ; 
 
@@ -37,7 +33,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
     echo "<script>alert('This College Id already exists. Go to login page.')</script>" ; 
   }
   else if( $pwd1 != $pwd2 ){ 
-    echo "Passwords don't match.";
+    echo "<script>alert('Passwords do not match.')</script>";
   }
   else{    //Server Side validation is done. 
 
@@ -69,7 +65,6 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
     if ($conn->query($insert)) { 
 
       //Now that necessary emails are sent. We are going to start with verification.
-  echo "<script>alert('please work7');</script>" ;
     
       $to = $em ; 
       $subject = "Email Verification." ; 
