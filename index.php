@@ -1,11 +1,10 @@
 <html lang="en">
 	<head>
-		<title>Eduvate</title>
+		<title>Agora Group Video Chat Demo</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 	<body>
-		<h1>Its time to get eduvating!</h1>
 		<div class="container-fluid p-0">
 			<div id="main-container">
 				<div id="screen-share-btn-container" class="col-2 float-right text-right mt-2">
@@ -58,7 +57,13 @@
               <span>&times;</span>
             </button>
           </div>
-          
+          <div class="modal-body mx-3">
+            
+            <div class="md-form mb-4">
+              <input type="number" id="form-uid" class="form-control" value="1001" data-decimals="0"/>
+              <label for="form-uid">UID</label>
+            </div>
+          </div>
           <div class="modal-footer d-flex justify-content-center">
             <button id="join-channel" class="btn btn-default">Join Channel</button>
           </div>
@@ -84,15 +89,10 @@
 	<script type="text/javascript">
 		// init the session when user clicks join btn
 		$( "#join-channel" ).click(function( event ) {
-			var agoraAppId ="7ef31c13fd1544d490fca2801dc017a8";
-			var token = "7ef31c13fd1544d490fca2801dc017a8";
-
-			//REPLACE WITH SUBJECT CHANNEL
-			var channelName ="chemistry";
-
-			//REPLACE WITH COLLEGE ID
-			var uid =1010;
-
+			var agoraAppId = "59254f5c7d294821abdc103716a2417c";
+			var token = "59254f5c7d294821abdc103716a2417c";
+			var channelName = "chemistry";
+			var uid = parseInt($("#form-uid").val());
 			$("#modalForm").modal("hide");
 			initClientAndJoinChannel(agoraAppId, token, channelName, uid);
 		});
