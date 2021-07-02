@@ -31,9 +31,7 @@ if(isset($_POST['submit'])){
             $result = mysqli_query($conn , $updatePassword) ; 
 
             if($result){ 
-                echo "<script>alert('The password has been changed succefully you may now login.')</script>" ;
-                //The above echo statement is not being printed. 
-                header('location:login.php') ;
+                echo "<script>alert('The password has been changed succefully you may now login.'); document.location='login.php'</script>" ;
             }
             else{ 
             echo "<script>alert('Something went wrong. Try again.')</script>" ; 
