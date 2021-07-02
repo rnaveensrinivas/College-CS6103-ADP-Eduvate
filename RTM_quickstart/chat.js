@@ -5,9 +5,9 @@ let options = {
 }
 
 // Your app ID
-const appID = 'e0cfd49c38604e99aebcb2ef1ea20227';
+const appID = '97b519f6ee00429ba0a09af9750892e0';
 // Your token
-options.token = '006e0cfd49c38604e99aebcb2ef1ea20227IACW7vsLQGezF8julkDmUsdZKotFedLBHAg/F8SNso4E4EgH/JwAAAAAEADrGt85W77dYAEA6ANbvt1g';
+options.token = '00697b519f6ee00429ba0a09af9750892e0IAD6hv6N3dbCJK2t2u/KSvoOc2tpHoQGhGMd05q+dabT+T9eonQAAAAAEABIxZZuQxbgYAEA6ANDFuBg';
 
 // Initialize client
 const client = AgoraRTM.createInstance(appID)

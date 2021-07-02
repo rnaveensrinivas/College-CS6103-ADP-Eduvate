@@ -1,25 +1,17 @@
 {
-  "name": "eduvate-app",
+  "name": "web",
   "version": "1.0.0",
   "description": "",
-  "main": "AgoraRTCSDK-3.3.1.js",
+  "main": "chat.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Trio-of-processors/Eduvate-app.git"
+      "build": "webpack --config webpack.config.js",
+      "start:dev": "webpack serve --open --config webpack.config.js"
   },
   "dependencies": {
-    "agora-rtm-sdk": "1.4.3",
-    "webpack": "5.28.0",
-    "webpack-dev-server": "3.11.2",
-    "webpack-cli": "4.5.0"
+      "webpack": "5.28.0",
+      "webpack-dev-server": "3.11.2",
+      "webpack-cli": "4.5.0"
   },
   "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/Trio-of-processors/Eduvate-app/issues"
-  },
-  "homepage": "https://github.com/Trio-of-processors/Eduvate-app#readme"
-}
+  "license": "ISC"
+  }
