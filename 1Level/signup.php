@@ -132,9 +132,9 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
             <tr>
                 <td>Choose</td>
                 <td>
-                    <input type="radio" name="categ" id="student" value="student">
+                    <input type="radio" name="categ" id="student" value="Student">
                     <label for='student'>Student</label>
-                    <input type="radio" name="categ" id="teacher" value="teacher">
+                    <input type="radio" name="categ" id="teacher" value="Teacher">
                     <label for='teacher'>Teacher</label>
                 </td>
             </tr>

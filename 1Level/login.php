@@ -1,5 +1,7 @@
 <?php
 
+session_start() ; 
+
 $error = NULL ; 
 
 include '../config.php'   ; 
@@ -25,14 +27,24 @@ if ( isset($_POST['submit'])){
         $row = $resultSet->fetch_assoc() ; 
         $verified = $row['Verified'] ; 
         $em_database = $row['Email'] ; 
-        $createdDate = $row['CreatedDate']; 
+        $CollegeID = $row['CollegeID'] ; 
+        $Password1 = $row['Password1'] ; 
+        $createdDate = $row['CreatedDate'] ;
+        $Fname = $row['Fname'] ;  
+        $Category = $row['Category'] ; 
+
+        $_SESSION['CollegeID'] = $CollegeID ;
+        $_SESSION['Password1'] = $Password1 ; 
+        $_SESSION['Fname'] = $Fname ;   
+        $_SESSION['Category'] = $Category ; 
     
-        if ( $verified){ 
+        if ( $verified ){ 
             header('location:../mainlobby.php');
         }
         else{ 
             echo "This account needs to be verified. Mail : '$em_database' Date Created : '$createdDate'."; 
         }
+
     }
     else{
         echo "<script>alert('Invalid Username or password.')</script>" ; 
