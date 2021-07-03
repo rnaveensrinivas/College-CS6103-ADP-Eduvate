@@ -33,7 +33,7 @@ if(isset($_GET['Vkey'])){
                 $run1 = mysqli_query($conn,"CREATE TABLE $tablename(TeamName varchar(45) PRIMARY KEY , Keycode varchar(10))");    
                 
                 if(!$run1){
-                echo mysqli_error($conn);
+                    echo mysqli_error($conn);
                 } 
 
             }

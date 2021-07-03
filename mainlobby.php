@@ -11,36 +11,41 @@ if ($conn->connect_error) {
 
 if( $_SESSION['Category'] == "Student"){ 
 
-    $tablename = "s".$_SESSION['CollegeID'] ; 
-    $result = mysqli_query( $conn, "SELECT * FROM '$tablename' LIMIT 1"); 
-    while ( $row = mysqli_fetch_array($result) ) { 
-        $teams = $row['TeamName'] ; 
-        echo "Team : '$teams' \n"; 
+    $tablename = $_SESSION['CollegeID'] ; 
+    $tablename = "s" . $tablename ; 
+    $selectAllTeamNames = "SELECT * FROM '$tablename' " ; 
+
+    if ( $result = mysqli_query( $conn, $selectAllTeamNames ) ) { 
+        while ( $row = mysqli_fetch_assoc($result) ) { 
+            $teams = $row['TeamName'] ; 
+            echo "Team : '$teams' <br>"; 
+        }
     }
 
-    echo "<a link ='jointeam.php'> Join Team</a>"  ;
+?>
+    <button onclick="location.href='jointeam.php'">Join Team</button>
 
-
+<?php
 }
 else { 
     
     $CollegeID  = $_SESSION['CollegeID'] ; 
+    $selectAllTeam = "SELECT * FROM teams where TeacherID = '$CollegeID' " ; 
 
-    $resultSet = $conn->query("SELECT * FROM teams where CollegeID = '$CollegeID' LIMIT 1"); 
-    while ( $row = mysqli_fetch_array($resultSet) ) { 
-        $teams = $row['TeamName'] ; 
-        echo "Team : '$teams' \n"; 
+    if ( $result = mysqli_query( $conn, $selectAllTeam ) ) { 
+        while ( $row = mysqli_fetch_assoc($result) ) { 
+            $teams = $row['TeamName'] ; 
+            echo "Team : $teams <br>"; 
+        }
     }
 
-    echo "<a link ='createteam.php'>Create Team</a>"  ;
-
-
+?>
+    <button onclick="location.href='createteam.php'">Create Team</a></button>
+<?php
 
 }
 
 
-
-session_close() ; 
 ?>
 
 

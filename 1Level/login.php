@@ -30,15 +30,21 @@ if ( isset($_POST['submit'])){
         $CollegeID = $row['CollegeID'] ; 
         $Password1 = $row['Password1'] ; 
         $createdDate = $row['CreatedDate'] ;
-        $Fname = $row['Fname'] ;  
         $Category = $row['Category'] ; 
+
+        $LastName = $row['LastName'] ;
+        $FirstName = $row['FirstName'] ;  
+
+        $FullName = $FirstName ; 
+        $FullName .= '_' ; 
+        $FullName .= $LastName ;
 
         $_SESSION['CollegeID'] = $CollegeID ;
         $_SESSION['Password1'] = $Password1 ; 
-        $_SESSION['Fname'] = $Fname ;   
+        $_SESSION['FullName'] = $FullName ;   
         $_SESSION['Category'] = $Category ; 
     
-        if ( $verified ){ 
+        if ( $verified ){ // if it is a verifed account.
             header('location:../mainlobby.php');
         }
         else{ 
