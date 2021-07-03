@@ -1,5 +1,6 @@
 //client side js
-const socket = io('http://localhost:3000')
+//const socket = io('http://localhost:3000')
+const socket = io('https://eduvate335.herokuapp.com')
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 
@@ -37,3 +38,10 @@ function appendMessage(message) {
     messageElement.innerText = message
     messageContainer.append(messageElement)
 }
+
+/*terminal commands
+npm init
+npm i socket.io
+npm i --save-dev nodemon
+npm run devStart
+*/
