@@ -3,11 +3,6 @@
 session_start() ; 
 
 include 'config.php' ; 
-$conn = NEW mysqli($servername, $username, $password, $dbname);
-  // Check connection
-if ($conn->connect_error) {
-    die(" Connection failed: " . $conn->connect_error);
-}
 
 if(isset($_POST['submit'])){ 
     $TeacherID = $_SESSION['CollegeID'] ; 

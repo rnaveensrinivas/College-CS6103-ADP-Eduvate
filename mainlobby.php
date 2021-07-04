@@ -3,14 +3,7 @@
 session_start() ; 
 include 'config.php' ; 
 
-$conn = NEW mysqli($servername, $username, $password, $dbname);
-      // Check connection
-if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-}
-
 // Displaying student main lobby
-
 if( $_SESSION['Category'] == "Student"){ 
 
     //To get the student table name. 

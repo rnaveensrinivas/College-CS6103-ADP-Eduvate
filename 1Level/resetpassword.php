@@ -4,13 +4,6 @@ include '../config.php';
 
 if( isset($_POST['submit'])){ //Checking if the form is submitted. 
 
-
-    $conn = NEW mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-
     $em= $conn->real_escape_string($_POST["em"]); //getting the mail and sanitiziing it.
   
 

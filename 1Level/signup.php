@@ -12,11 +12,6 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
   $pwd2=$_POST["pwd2"];
 
 
-  $conn = NEW mysqli($servername, $username, $password, $dbname);
-  // Check connection
-  if ($conn->connect_error) {
-      die(" Hello Connection failed: " . $conn->connect_error);
-  } 
 
 
   $checkMailIfExists = "SELECT * FROM users WHERE Email = '$em'" ; //Checking if email already exists. 

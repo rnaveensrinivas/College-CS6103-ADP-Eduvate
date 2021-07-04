@@ -8,12 +8,6 @@ include '../config.php'   ;
 
 if ( isset($_POST['submit'])){ 
 
-    $conn = NEW mysqli($servername, $username, $password, $dbname);
-      // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     //Getting the form data.
     $em = $conn->real_escape_string($_POST["em"]) ; // Sanitizing upon arrival. 
     $pwd1 = $conn->real_escape_string($_POST["pwd1"]) ;

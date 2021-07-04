@@ -5,13 +5,6 @@ if(isset($_POST['submit'])){
 
     $em = $_GET['em'] ; 
 
-    $conn = NEW mysqli($servername, $username, $password, $dbname);
-      // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    } 
-
-
     $checkMailIfExists = "SELECT * FROM users WHERE Email = '$em' LIMIT 1"; 
     $mailResult = mysqli_query($conn , $checkMailIfExists) ; 
 
