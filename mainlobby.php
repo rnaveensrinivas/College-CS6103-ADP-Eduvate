@@ -9,29 +9,40 @@ if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
 }
 
+// Displaying student main lobby
+
 if( $_SESSION['Category'] == "Student"){ 
 
+    //To get the student table name. 
     $tablename = $_SESSION['CollegeID'] ; 
     $tablename = "s" . $tablename ; 
-    $selectAllTeamNames = "SELECT * FROM '$tablename' " ; 
+    $_SESSION['studenttablename'] = $tablename ; 
 
+    //For displaying all the teams they have enrolled in. 
+    $selectAllTeamNames = "SELECT * FROM $tablename " ; 
     if ( $result = mysqli_query( $conn, $selectAllTeamNames ) ) { 
         while ( $row = mysqli_fetch_assoc($result) ) { 
             $teams = $row['TeamName'] ; 
-            echo "Team : '$teams' <br>"; 
+            echo "Team : $teams <br>"; 
         }
+    }
+    else{ 
+        echo "<script>alert('You have to join a new team.')</script>" ; 
     }
 
 ?>
+
     <button onclick="location.href='jointeam.php'">Join Team</button>
 
 <?php
-}
-else { 
-    
-    $CollegeID  = $_SESSION['CollegeID'] ; 
-    $selectAllTeam = "SELECT * FROM teams where TeacherID = '$CollegeID' " ; 
 
+}   // Displaying teacher main lobby
+else { 
+      
+    $CollegeID  = $_SESSION['CollegeID'] ; 
+
+    // Trying to display all the teams teacher has created.
+    $selectAllTeam = "SELECT * FROM teams where TeacherID = '$CollegeID' " ; 
     if ( $result = mysqli_query( $conn, $selectAllTeam ) ) { 
         while ( $row = mysqli_fetch_assoc($result) ) { 
             $teams = $row['TeamName'] ; 
@@ -40,16 +51,14 @@ else {
     }
 
 ?>
+
     <button onclick="location.href='createteam.php'">Create Team</a></button>
+
 <?php
 
 }
 
-
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html>
