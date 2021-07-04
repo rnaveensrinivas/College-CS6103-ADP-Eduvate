@@ -23,16 +23,21 @@ if( $_SESSION['Category'] == "Student"){
     if ( $result = mysqli_query( $conn, $selectAllTeamNames ) ) { 
         while ( $row = mysqli_fetch_assoc($result) ) { 
             $teams = $row['TeamName'] ; 
-            echo "Team : $teams <br>"; 
+            echo "Team : $teams "; 
+            echo "<button> <a href='teams.php?TeamName=$teams'>Join </a></button><br>" ;
+            //Joining a specific team page. And we are passing the team name using GET to that teams page.
         }
     }
     else{ 
         echo "<script>alert('You have to join a new team.')</script>" ; 
     }
 
+    // Creating 
+
 ?>
 
-    <button onclick="location.href='jointeam.php'">Join Team</button>
+    <button onclick="location.href='jointeam.php'" >Join Team</button>
+    
 
 <?php
 
@@ -46,7 +51,9 @@ else {
     if ( $result = mysqli_query( $conn, $selectAllTeam ) ) { 
         while ( $row = mysqli_fetch_assoc($result) ) { 
             $teams = $row['TeamName'] ; 
-            echo "Team : $teams <br>"; 
+            echo "Team : $teams "; 
+            echo "<button> <a href='teams.php?TeamName=$teams'>Join </a></button><br>" ;
+            //Joining a specific team page. And we are passing the team name using GET to that teams page.
         }
     }
 

@@ -1,3 +1,7 @@
+<?php
+	session_start() ; 
+?>
+
 <html lang="en">
 	<head>
 		<title>Agora Group Video Chat Demo</title>
@@ -58,11 +62,12 @@
             </button>
           </div>
           <div class="modal-body mx-3">
-            
+            <!--
             <div class="md-form mb-4">
               <input type="number" id="form-uid" class="form-control" value="1001" data-decimals="0"/>
               <label for="form-uid">UID</label>
             </div>
+			-->
           </div>
           <div class="modal-footer d-flex justify-content-center">
             <button id="join-channel" class="btn btn-default">Join Channel</button>
@@ -91,8 +96,8 @@
 		$( "#join-channel" ).click(function( event ) {
 			var agoraAppId = "59254f5c7d294821abdc103716a2417c";
 			var token = "59254f5c7d294821abdc103716a2417c";
-			var channelName = "chemistry";
-			var uid = parseInt($("#form-uid").val());
+			var channelName = "<?php echo $_SESSION['TeamName'] ; ?>";
+			var uid = "<?php echo $_SESSION['CollegeID'] ; ?>";
 			$("#modalForm").modal("hide");
 			initClientAndJoinChannel(agoraAppId, token, channelName, uid);
 		});
