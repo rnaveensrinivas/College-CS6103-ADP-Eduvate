@@ -81,9 +81,6 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html>
     <head>
@@ -94,80 +91,58 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
 
     <body onload="newCaptcha()">
-        <h3 style="text-align: center;">Sign up page</h3>
+        
 
         <?php 
           echo $error ; 
         ?>
-
-        <table>
         <form method="POST" action="" onsubmit="return validCaptcha()">
+        <div class="signup-form">
+            <h3>Sign up page</h3>
+            <p></p>
+            <label for="em">E-mail</label><br>
+            <input type = "email" id="em" name="em" required><br>
 
-            <tr>
-                <td><label for="em">E-mail</label></td>
-                <td><input type = "email" id="em" name="em" required></td>
-            </tr>
-
-            <tr>
-                <td><label for="fname">First Name</label></td>
-                <td><input type = "text" id="fname" name="fname"></td>
-            </tr>
-
-            <tr>
-                <td><label for="lname">Last Name</label></td>
-                <td><input type = "text" id="lname" name="lname"></td>
-
-            </tr>
             
-            <tr>
-                <td><label for="col">College</label></td>
-                <td><input type = "text" id="col" name="col"></td>
-            </tr>
+            <label for="fname">First Name</label><br>
+            <input type = "text" id="fname" name="fname"><br>
+          
 
-            <tr>
-                <td>Choose</td>
-                <td>
+           
+            <label for="lname">Last Name</label><br>
+            <input type = "text" id="lname" name="lname"><br>
+
+ 
+                <label for="col">College</label><br>
+                <input type = "text" id="col" name="col"><br>
+
+                    Choose<br>
                     <input type="radio" name="categ" id="student" value="Student">
                     <label for='student'>Student</label>
                     <input type="radio" name="categ" id="teacher" value="Teacher">
-                    <label for='teacher'>Teacher</label>
-                </td>
-            </tr>
+                    <label for='teacher'>Teacher</label><br>
+            
+    
+                <label for="uid">College ID</label><br>
+                <input type="number" name="uid" min="1000000000" max="9999999999"><br>
 
-            <tr>
-                <td><label for="uid">College ID</label></td>
-                <td><input type="number" name="uid" min="1000000000" max="9999999999"></td>
+                <label for="dept">Department</label><br>
+                <input type ="text" name="dept" id="dept"><br>
+      
 
-            </tr>
+                <label for="pwd1">Password</label><br>
+                <input type="password" id="pwd1" name="pwd1"><br>
 
-            <tr>
-                <td><label for="dept">Department</label></td>
-                <td><input type ="text" name="dept" id="dept"></td>
-            </tr>
-
-            <tr>
-                <td><label for="pwd1">Password</label></td>
-                <td><input type="password" id="pwd1" name="pwd1"></td>
-            </tr>
-
-            <tr>
-                <td><label for="pwd2">Confirm Password</label></td>
-                <td><input type="password" id="pwd2" name="pwd2"></td>
-            </tr>
-
-            <tr>
-                <td>
-                    <button type="button" onclick="newCaptcha()">New Captcha</button><br>
-                    <input type="text" readonly id="captcha" size="9" style="text-align: center;"> 
-                </td>
-                <td><input type="text" id="enteredCaptcha"></td>
-            </tr>
-
-            <tr>
-                <td colspan="2"><input type="submit" value='Create Account' name="submit"></td>
-            </tr>
-
+                <label for="pwd2">Confirm Password</label><br>
+                <input type="password" id="pwd2" name="pwd2"><br>
+   
+                
+                    <button type="button" onclick="newCaptcha()">New Captcha</button>
+                    <input type="text" readonly id="captcha" size="9" style="text-align: center;">
+                <input type="text" id="enteredCaptcha"><br><br>
+            <button type="submit" value='Create Account' name="submit">Create Account</button>
+        
+        </div> 
         </form>
-        </table>
     </body>
 </html>

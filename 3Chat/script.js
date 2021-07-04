@@ -1,6 +1,6 @@
 //client side js
-//const socket = io('http://localhost:3000')
-const socket = io('https://eduvate335.herokuapp.com')
+const socket = io('http://localhost:3000')
+//const socket = io('https://eduvate335.herokuapp.com')
 const messageContainer = document.getElementById('message-container')
 const messageForm = document.getElementById('send-container')
 
@@ -9,8 +9,7 @@ const messageInput = document.getElementById('message-input')
 const personName = prompt('What is your name?')
 appendMessage('You joined')
 
-socket.emit('new-user', personName)//shows this on the pther person's page
-
+socket.emit('new-user', personName)//shows this on the other person's page
 
 socket.on('chat-message', data => {
     appendMessage(`${data.personName}: ${data.message}`)
