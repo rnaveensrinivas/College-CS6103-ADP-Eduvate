@@ -45,6 +45,7 @@ if(isset($_POST['submit'])){
 
 ?>
 
+<!--
 
 <!DOCTYPE html>
 <html>
@@ -70,3 +71,29 @@ if(isset($_POST['submit'])){
         </form>
     </body>
 </html>
+-->
+
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reset Password</title>
+        <link rel="stylesheet" type="text/css" href="1Level/style2.css">
+    </head>
+    <body>
+        <?php 
+         // echo $error ; 
+        ?>
+        <form method="POST" action="" autocomplete="off">
+        <div class="form">
+            <h2>Create Team</h2>
+            <p></p>
+            <div class="email">
+            <label for="TeamName">Team name</label><br>
+            <input type="Text" id="TeamName" name='TeamName' required placeholder="Eg: CS6103"><br>
+            </div>
+            <button type="submit" name="submit" id="submit-button">Create Team</button>
+        </div> 
+        </form>
+    </body>
+ </html> 

@@ -1,3 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="1Level/style2.css">
+    </head>
+
+
+    <body>
+        <div class="form">
+            <h2>Welcome to your online classroom</h2>
+            <p></p>
+        
+            <!--<button type="button" onclick="location.href='../index.html'" id="submit-button">Homepage</button> -->
+   
+
+
+
 <?php
 
 session_start() ; 
@@ -16,8 +34,9 @@ if( $_SESSION['Category'] == "Student"){
     if ( $result = mysqli_query( $conn, $selectAllTeamNames ) ) { 
         while ( $row = mysqli_fetch_assoc($result) ) { 
             $teams = $row['TeamName'] ; 
-            echo "Team : $teams "; 
-            echo "<button> <a href='teams.php?TeamName=$teams'>Join </a></button><br>" ;
+            $PrintTeamName = substr($teams,0,-11) ;
+            echo "<h3>Team : $PrintTeamName "; 
+            echo "<a href='teams.php?TeamName=$teams' id='submit-button'><button> Join </button></a></h3>" ;
             //Joining a specific team page. And we are passing the team name using GET to that teams page.
         }
     }
@@ -44,15 +63,16 @@ else {
     if ( $result = mysqli_query( $conn, $selectAllTeam ) ) { 
         while ( $row = mysqli_fetch_assoc($result) ) { 
             $teams = $row['TeamName'] ; 
-            echo "Team : $teams "; 
-            echo "<button> <a href='teams.php?TeamName=$teams'>Join </a></button><br>" ;
+            $PrintTeamName = substr($teams,0,-11) ;
+            echo "<h3>Team : $PrintTeamName "; 
+            echo "<a href='teams.php?TeamName=$teams' id='submit-button'><button> Join </button></a></h3>" ;
             //Joining a specific team page. And we are passing the team name using GET to that teams page.
         }
     }
 
 ?>
 
-    <button onclick="location.href='createteam.php'">Create Team</a></button>
+    <button onclick="location.href='createteam.php'" id='submit-button'>Create Team</a></button>
 
 <?php
 
@@ -60,9 +80,14 @@ else {
 
 ?>
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <body>
         <h1>Welcome to your online classroom</h1>
+    </body>
+</html>-->
+
+
+        </div> 
     </body>
 </html>
