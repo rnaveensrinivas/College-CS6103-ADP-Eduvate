@@ -17,7 +17,7 @@ a {
 /*New CSS */
 
 body {
-    background-color: #FF7564;
+    background-color: #b3b3b3;
  }
  .signup-form {
      margin: auto; 
@@ -61,22 +61,29 @@ body {
  }
  input:focus { /*removes the automatic blue highlight*/
      outline: none;
-     border-color:#ffce64 ;
-     box-shadow: 0 0 5px #ffce64;
+     border-color:#FF7564 ;
+     box-shadow: 0 0 5px #FF7564;
  }
  button {
-     font-size: 15px;
+     font-size: 17px;
      padding-left: 10px;
      padding-top: 10px;
      padding-bottom: 10px;
      padding-right: 10px;
-     align-items: center;
+     
      margin: 0;
      top:50%;
-     background-color: #FF7564;
+     background-color:#FF7564;
      color: white;
      border: none;
      border-radius: 15px;
      box-shadow: 0 4px 5px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.1);
-
+     font-family: Verdana, Geneva, Tahoma, sans-serif;
+     color: rgb(255, 255, 255);
+    /* display: flex;
+     align-items: center;
+     justify-content: center;*/
+ }
+ ::placeholder {
+     
  }

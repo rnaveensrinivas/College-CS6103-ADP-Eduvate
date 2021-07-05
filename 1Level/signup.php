@@ -85,7 +85,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 <html>
     <head>
         <title>Signup page</title>
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="style2.css">
         <script src="valid.js"></script>
     </head>
 
@@ -96,51 +96,59 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
         <?php 
           echo $error ; 
         ?>
-        <form method="POST" action="" onsubmit="return validCaptcha()">
+        <form method="POST" action="" autocomplete="off" onsubmit="return validCaptcha()">
         <div class="signup-form">
-            <h3>Sign up page</h3>
-            <p></p>
+            <h2>A New Pedagogy Awaits!</h2>
+            <p>One account to start your Eduvation journey.</p>
+            <div class="email">
             <label for="em">E-mail</label><br>
-            <input type = "email" id="em" name="em" required><br>
-
-            
+            <input type = "email" id="em" name="em" required placeholder="abcd@gmail.com"><br>
+            </div>
+            <div class="fname">
             <label for="fname">First Name</label><br>
-            <input type = "text" id="fname" name="fname"><br>
-          
+            <input type = "text" id="fname" name="fname" placeholder="John"><br>
+            </div>
 
            
             <label for="lname">Last Name</label><br>
-            <input type = "text" id="lname" name="lname"><br>
+            <input type = "text" id="lname" name="lname" placeholder="Smith"><br>
 
  
                 <label for="col">College</label><br>
-                <input type = "text" id="col" name="col"><br>
+                <input type = "text" id="col" name="col"placeholder="College Of Engineering Guindy"><br>
+                <div style="text-align:center; padding:10px;">
 
-                    Choose<br>
-                    <input type="radio" name="categ" id="student" value="Student">
-                    <label for='student'>Student</label>
-                    <input type="radio" name="categ" id="teacher" value="Teacher">
-                    <label for='teacher'>Teacher</label><br>
+                  Choose:
+                  <div style="padding:10px; display:inline">
+                  <input type="radio" name="categ" id="student" value="Student" >
+                  <label for='student'>Student</label>
+                  </div>
+                  <div style="padding:10px; display:inline">
+                  <input type="radio" name="categ" id="teacher" value="Teacher">
+                  <label for='teacher'>Teacher</label><br>
+                  </div>
+                </div>
             
     
                 <label for="uid">College ID</label><br>
-                <input type="number" name="uid" min="1000000000" max="9999999999"><br>
+                <input type="number" id="uid" name="uid" min="1000000000" max="9999999999" placeholder="1234567890"><br>
 
                 <label for="dept">Department</label><br>
-                <input type ="text" name="dept" id="dept"><br>
+                <input type ="text" name="dept" id="dept"placeholder="Computer Science and Engineering"><br>
       
 
                 <label for="pwd1">Password</label><br>
                 <input type="password" id="pwd1" name="pwd1"><br>
 
                 <label for="pwd2">Confirm Password</label><br>
-                <input type="password" id="pwd2" name="pwd2"><br>
-   
-                
-                    <button type="button" onclick="newCaptcha()">New Captcha</button>
-                    <input type="text" readonly id="captcha" size="9" style="text-align: center;">
-                <input type="text" id="enteredCaptcha"><br><br>
-            <button type="submit" value='Create Account' name="submit">Create Account</button>
+                <input type="password" id="pwd2" name="pwd2"><br><br>
+
+                <button type="button" onclick="newCaptcha()" id="cap">New Captcha</button>
+                <input type="text"  id="captcha" class="searchBox" readonly>
+               
+
+                <input type="text" id="enteredCaptcha" placeholder="Enter Above Captcha" style="text-align:center; font-size: 17px;"><br><br>
+                <button type="submit" value='Create Account' name="submit" id="submit-button">Create Account</button>
         
         </div> 
         </form>
