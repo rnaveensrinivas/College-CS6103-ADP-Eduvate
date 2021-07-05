@@ -10,7 +10,7 @@ h2 {
 body {
     background-color: #5271ff;
  }
- .signup-form {
+ .form {
      margin: auto; 
      /*to center a div element in the page, always say margin auto*/
      padding-left: 50px;
@@ -64,9 +64,6 @@ body {
      box-shadow: 0 4px 5px 0 rgba(0,0,0,0.2), 0 5px 5px 0 rgba(0,0,0,0.1);
      font-family: "Poppins", sans-serif;
      color: rgb(255, 255, 255);
-    /* display: flex;
-     align-items: center;
-     justify-content: center;*/
  }
 
  ::placeholder {
@@ -89,11 +86,12 @@ p {
     font-size: 15px;
     line-height: 15px;
 }
-* {
+* {/*to set the captcha button to same width as the input field*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
+
 button {
     transition-duration: 0.4s;
   }
@@ -104,7 +102,7 @@ button:hover {
 }
 .searchBox{
   background-image:url('captchabg.jpeg');
-  background-size: 100%;
+  background-size: 100%; /*sets the background image size to full*/
   background-repeat:no-repeat;
   padding-left:20px;
   text-align:center; 

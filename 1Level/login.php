@@ -53,42 +53,71 @@ if ( isset($_POST['submit'])){
 
 ?>
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
-        <title>Login Page</title> 
-        <link rel="stylesheet" type="text/css" href="stylesheet.css">
+        <title>Login page</title> 
+        <link rel="stylesheet" type="text/css" href="style2.css">
         <script src="valid.js"></script>
     </head>
 
     <body onload="newCaptcha()">
-
+   
         <form action="" method="POST" onsubmit="return validCaptcha();">
-            <table>
-                <tr>
-                    <td><label for="email">Email : </label></td>
-                    <td><input type="email" id="em" name='em'></td>
-                </tr>
-                <tr>
-                    <td><label for="pwd1">Password : </label></td>
-                    <td><input type="password" id="pwd1" name="pwd1"></td>
-                </tr>
-
-                <tr>
-                    <td>
-                        <button type="submit" onclick="newCaptcha()">New Captcha</button><br>
+        <div class="form">
+            <h2>Where Have You Been?<h2>
+            <p>Let's continue eduvating!</p>
+                    <label for="email">Email : </label>
+                    <input type="email" id="em" name='em'>
+                    <label for="pwd1">Password : </label>
+                    <input type="password" id="pwd1" name="pwd1">
+    
+                        <button type="button" onclick="newCaptcha()" id="cap">New Captcha</button><br>
                         <input type="text" readonly id="captcha" size="9" style="text-align: center;"> 
-                    </td>
-                    <td><input type="text" id="enteredCaptcha"></td>
-                </tr>
+                        <input type="text" id="enteredCaptcha"></td>
 
-                <tr>
-                    <td colspan="2">
                     <input type="submit" value="Login" name="submit"><br>
                     <a href="resetpassword.php">Forgot Password ? </a>
-                    </td>
-                </tr>
-            </table>
+        </form>
+    </body>
+</html>-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Signup page</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+        <script src="valid.js"></script>
+    </head>
+
+
+    <body onload="newCaptcha()">
+        
+
+        <?php 
+          echo $error ; 
+        ?>
+        <form method="POST" action="" autocomplete="off" onsubmit="return validCaptcha()">
+        <div class="form">
+            <h2>Where Have You Been?</h2>
+            <p>Let's continue eduvating!</p>
+            <div class="email">
+            <label for="em">E-mail</label><br>
+            <input type = "email" id="em" name="em" required placeholder="abcd@gmail.com"><br>
+            </div>
+      
+                <label for="pwd1">Password</label><br>
+                <input type="password" id="pwd1" name="pwd1">
+                <a href="resetpassword.php" style="text-decoration:none; font-size: 15px;">Forgot Password?</a><br><br>
+
+                <button type="button" onclick="newCaptcha()" id="cap">New Captcha</button>
+                <input type="text"  id="captcha" class="searchBox" readonly>
+               
+
+                <input type="text" id="enteredCaptcha" placeholder="Enter Above Captcha" style="text-align:center; font-size: 17px;"><br><br>
+                <button type="submit" value='Create Account' name="submit" id="submit-button">Login</button>
+         
+        
+        </div> 
         </form>
     </body>
 </html>

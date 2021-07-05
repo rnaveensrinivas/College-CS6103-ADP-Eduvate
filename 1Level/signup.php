@@ -97,7 +97,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
           echo $error ; 
         ?>
         <form method="POST" action="" autocomplete="off" onsubmit="return validCaptcha()">
-        <div class="signup-form">
+        <div class="form">
             <h2>A New Pedagogy Awaits!</h2>
             <p>One account to start your Eduvation journey.</p>
             <div class="email">
