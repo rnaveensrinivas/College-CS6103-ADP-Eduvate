@@ -12,7 +12,7 @@ h1 {
     font-weight: 400;
 }
 body {
-    background-color: #5271ff;
+    background-color: rgb(95, 108, 255);
  }
  .form {
      margin: auto; 
@@ -61,7 +61,7 @@ body {
      font-size: 17px;
      padding: 15px;
      top:50%;
-     background-color:#5271ff;
+     background-color: rgb(95, 108, 255);
      color: white;
      border: none;
      border-radius: 5px;

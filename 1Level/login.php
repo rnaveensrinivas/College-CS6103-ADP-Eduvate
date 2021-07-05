@@ -84,7 +84,7 @@ if ( isset($_POST['submit'])){
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Signup page</title>
+        <title>Login page</title>
         <link rel="stylesheet" type="text/css" href="style2.css">
         <script src="valid.js"></script>
     </head>
@@ -114,7 +114,7 @@ if ( isset($_POST['submit'])){
                
 
                 <input type="text" id="enteredCaptcha" placeholder="Enter Above Captcha" style="text-align:center; font-size: 17px;"><br><br>
-                <button type="submit" value='Create Account' name="submit" id="submit-button">Login</button>
+                <button type="submit" name="submit" id="submit-button">Login</button>
          
         
         </div> 

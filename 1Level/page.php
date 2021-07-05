@@ -53,9 +53,27 @@ if(isset($_GET['Vkey'])){
 
 ?>
 
-<!doctype html>
+<!--<!doctype html>
 <html>
     <body>
         <button onclick="location.href='login.php'">login</button>
+    </body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>About</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+    </head>
+
+
+    <body>
+        <div class="form">
+            <h2>About the App</h2>
+            <p>An app coded to fix the pitfalls of Microsoft Teams.</p>
+        
+            <button type="button" onclick="location.href='login.php'" id="submit-button">Login</button>
+        </div> 
     </body>
 </html>

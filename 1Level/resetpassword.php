@@ -34,7 +34,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 ?>
 
 
-<!DOCTYPE html>
+<!--<!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -61,4 +61,28 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
             </table>
         </form>
     </body>
-</html>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reset Password</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+    </head>
+    <body>
+        <?php 
+          echo $error ; 
+        ?>
+        <form method="POST" action="" autocomplete="off">
+        <div class="form">
+            <h2>Reset Password</h2>
+            <p>Enter your registered email address</p>
+            <div class="email">
+            <label for="em">E-mail</label><br>
+            <input type = "email" id="em" name="em" required placeholder="abcd@gmail.com"><br>
+            </div>
+            <button type="submit" name="submit" id="submit-button">Send Mail</button>
+        </div> 
+        </form>
+    </body>
+ </html> 

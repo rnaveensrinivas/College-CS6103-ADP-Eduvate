@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #5271ff;
+    background-color:  rgb(95, 108, 255);
 
 }
 
@@ -77,13 +77,13 @@ height: 50%;
 }
 
 .nav-link:hover{
-    color: #5271ff;
+    color:  rgb(95, 108, 255);
 }
 
 .nav-logo {
     font-size: 30px;
     font-weight: 500;
-    color: #5271ff;
+    color:  rgb(95, 108, 255);
     background-color: white;
 }
 

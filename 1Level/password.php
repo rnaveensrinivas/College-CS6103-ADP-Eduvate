@@ -41,7 +41,7 @@ if(isset($_POST['submit'])){
 
 ?>
 
-<!doctype html>
+<!--<!doctype html>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="stylesheet.css">
@@ -65,5 +65,34 @@ if(isset($_POST['submit'])){
                 </tr>
             </form>
         </table>    
+    </body>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Password</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+        <script src="valid.js"></script>
+    </head>
+    
+    <body>
+        <?php 
+          echo $error ; 
+        ?>
+        <form method="POST" action="" autocomplete="off" onsubmit="return checkPassword()">
+        <div class="form">
+            <h2>Password</h2>
+            <p>Enter the new password.</p>
+      
+                <label for="pwd1">Password</label><br>
+                <input type="password" id="pwd1" name="pwd1"  minlength="8" pattern="[0-9a-fA-F!@#$%^&*_-.]"><br>
+
+                <label for="pwd2">Confirm Password</label><br>
+                <input type="password" id="pwd2" name="pwd2"  minlength="8" pattern="[0-9a-fA-F!@#$%^&*_-.]"><br><br>
+
+                <button type="submit" name="submit" id="submit-button">Reset Password</button>
+        </div> 
+        </form>
     </body>
 </html>
