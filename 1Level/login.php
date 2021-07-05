@@ -106,7 +106,7 @@ if ( isset($_POST['submit'])){
             </div>
       
                 <label for="pwd1">Password</label><br>
-                <input type="password" id="pwd1" name="pwd1">
+                <input type="password" id="pwd1" name="pwd1" minlength="8" pattern="[0-9a-fA-F!@#$%^&*_-.]>
                 <a href="resetpassword.php" style="text-decoration:none; font-size: 15px;">Forgot Password?</a><br><br>
 
                 <button type="button" onclick="newCaptcha()" id="cap">New Captcha</button>

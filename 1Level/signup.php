@@ -115,7 +115,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
  
                 <label for="col">College</label><br>
-                <input type = "text" id="col" name="col"placeholder="College Of Engineering Guindy"><br>
+                <input type = "text" id="col" name="col"placeholder="College Of Engineering, Guindy"><br>
                 <div style="text-align:center; padding:10px;">
 
                   Choose:
@@ -138,10 +138,10 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
       
 
                 <label for="pwd1">Password</label><br>
-                <input type="password" id="pwd1" name="pwd1"><br>
+                <input type="password" id="pwd1" name="pwd1"  minlength="8" pattern="[0-9a-fA-F!@#$%^&*_-.]"><br>
 
                 <label for="pwd2">Confirm Password</label><br>
-                <input type="password" id="pwd2" name="pwd2"><br><br>
+                <input type="password" id="pwd2" name="pwd2"  minlength="8" pattern="[0-9a-fA-F!@#$%^&*_-.]"><br><br>
 
                 <button type="button" onclick="newCaptcha()" id="cap">New Captcha</button>
                 <input type="text"  id="captcha" class="searchBox" readonly>
