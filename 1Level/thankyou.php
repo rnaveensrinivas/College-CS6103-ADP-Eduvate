@@ -1,6 +1,14 @@
 <!doctype html>
 <html>
+    <head>
+        <link href="style2.css" rel="stylesheet" type="text/css">
+    </head>
     <body>
-        Thank you . Go check inbox.
+
+        <div style="text-align:center; margin:5%">
+            <h1 style="color:white;">Thank you. Go check your inbox.</h1>
+            <img src="envelope.png" width="20%" >
+        </div>
+        
     </body>
 </html>
