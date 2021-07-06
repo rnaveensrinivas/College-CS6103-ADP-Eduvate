@@ -1,9 +1,10 @@
 <?php
-
+session_start() ; 
 include 'config.php' ; 
 
 
-$teams = $_GET['TeamName'] ; 
+$teams = $_GET['TeamName'] ;
+$_SESSION['TeamName'] = $_GET['TeamName'] ; // This is for video calling. 
 
 $PrintTeamName = substr($teams,0,-11) ;
 ?>
