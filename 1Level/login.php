@@ -53,40 +53,12 @@ if ( isset($_POST['submit'])){
 
 ?>
 
-<!--<!DOCTYPE html>
-<html>
-    <head>
-        <title>Login page</title> 
-        <link rel="stylesheet" type="text/css" href="style2.css">
-        <script src="valid.js"></script>
-    </head>
-
-    <body onload="newCaptcha()">
-   
-        <form action="" method="POST" onsubmit="return validCaptcha();">
-        <div class="form">
-            <h2>Where Have You Been?<h2>
-            <p>Let's continue eduvating!</p>
-                    <label for="email">Email : </label>
-                    <input type="email" id="em" name='em'>
-                    <label for="pwd1">Password : </label>
-                    <input type="password" id="pwd1" name="pwd1">
-    
-                        <button type="button" onclick="newCaptcha()" id="cap">New Captcha</button><br>
-                        <input type="text" readonly id="captcha" size="9" style="text-align: center;"> 
-                        <input type="text" id="enteredCaptcha"></td>
-
-                    <input type="submit" value="Login" name="submit"><br>
-                    <a href="resetpassword.php">Forgot Password ? </a>
-        </form>
-    </body>
-</html>-->
 <!DOCTYPE html>
 <html>
     <head>
         <title>Login page</title>
         <link rel="stylesheet" type="text/css" href="style2.css">
-        <script src="valid.js"></script>
+        <script src="validation.js"></script>
     </head>
 
 
@@ -98,20 +70,20 @@ if ( isset($_POST['submit'])){
             <h2>Where Have You Been?</h2>
             <p>Let's continue eduvating!</p>
             <p style="color:red; line-height: 120%; "><?php echo $error ; ?></p>
+            
             <div class="email">
-            <label for="em">E-mail</label><br>
-            <input type = "email" id="em" name="em" required placeholder="abcd@gmail.com"><br>
+                <label for="em">E-mail</label><br>
+                <input type = "email" id="em" name="em" required placeholder="abcd@gmail.com"><br>
             </div>
       
                 <label for="pwd1">Password</label><br>
-                <input type="password" id="pwd1" name="pwd1" minlength="8" pattern="[0-9a-fA-F!@#$%^&*_-.]">
+                <input type="password" id="pwd1" name="pwd1" minlength="8" pattern="[0-9a-fA-F!@#$%^&*_-.]" required placeholder="Must have at least 8 characters">
                 <a href="resetpassword.php" style="text-decoration:none; font-size: 15px;">Forgot Password?</a><br><br>
 
-                <button type="button" onclick="newCaptcha()" id="cap">New Captcha</button>
+                <button type="button" onclick="newCaptcha()" id="cap" title="Give a new Captcha.">New Captcha</button>
                 <input type="text"  id="captcha" class="searchBox" readonly>
-               
-
                 <input type="text" id="enteredCaptcha" placeholder="Enter Above Captcha" style="text-align:center; font-size: 17px;"><br><br>
+
                 <button type="submit" name="submit" id="submit-button">Login</button>
          
         

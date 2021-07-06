@@ -86,7 +86,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
     <head>
         <title>Signup page</title>
         <link rel="stylesheet" type="text/css" href="style2.css">
-        <script src="valid.js"></script>
+        <script src="validation.js"></script>
     </head>
 
 
