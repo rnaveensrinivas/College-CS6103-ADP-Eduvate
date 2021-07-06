@@ -1,5 +1,4 @@
 <?php
-
 include '../config.php';
 
 if( isset($_POST['submit'])){ //Checking if the form is submitted. 
@@ -13,7 +12,6 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
   $checkCollegeIDIfExists = "SELECT * FROM users WHERE CollegeID = '$uid'" ; //Checking if College ID already exists. 
   $mailResult = mysqli_query($conn , $checkMailIfExists) ; 
   $collegeIDResult =  mysqli_query($conn , $checkCollegeIDIfExists) ; 
-
 
 
   if( $mailResult->fetch_assoc()){
@@ -49,8 +47,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
     $insert = "INSERT INTO Users (Email,FullName,College,Category,CollegeID,Password1,Vkey) VALUES ('$em','$fname','$col','$categ','$uid','$pwd1','$Vkey')";
 
     if ($conn->query($insert)) { 
-
-      //Now that necessary emails are sent. We are going to start with verification.
+      //Sending Email Verification.
     
       $to = $em ; 
       $subject = "Email Verification." ; 
@@ -63,7 +60,6 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
       mail($to , $subject , $message, $headers) ; 
 
       header('location:thankyou.php');//Where do you want to send them to after verification. 
-
     }  
   }
   $conn->close();
