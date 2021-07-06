@@ -1,9 +1,9 @@
 -- phpMyAdmin SQL Dump
 -- version 5.1.0
 -- https://www.phpmyadmin.net/
-
+--
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2021 at 04:31 PM
+-- Generation Time: Jul 06, 2021 at 05:08 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -29,12 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `users` (
   `Email` text NOT NULL,
-  `FirstName` text NOT NULL,
-  `LastName` text NOT NULL,
+  `FullName` text NOT NULL,
   `College` text NOT NULL,
   `Category` text NOT NULL,
   `CollegeID` bigint(100) NOT NULL,
-  `Department` text NOT NULL,
   `Password1` text NOT NULL,
   `Vkey` varchar(45) NOT NULL,
   `Verified` tinyint(1) NOT NULL,
@@ -45,8 +43,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`Email`, `FirstName`, `LastName`, `College`, `Category`, `CollegeID`, `Department`, `Password1`, `Vkey`, `Verified`, `CreatedDate`) VALUES
-('rnaveensrinivas@gmail.com', 'Naveen', 'Srinivas', 'CEG', 'student', 1000000000, 'CSE', '0cc175b9c0f1b6a831c399e269772661', '3a49de4d0f791d14c1258452209cdaf3', 1, '2021-07-02 13:53:37.424893');
+INSERT INTO `users` (`Email`, `FullName`, `College`, `Category`, `CollegeID`, `Password1`, `Vkey`, `Verified`, `CreatedDate`) VALUES
+('rnaveensrinivas@gmail.com', 'Naveen Srinivas', 'College Of Engineering, Guindy', 'Teacher', 1000000000, '6eea9b7ef19179a06954edd0f6c05ceb', 'ee9c6871e556de65130a03dff0adcdbd', 1, '2021-07-06 14:55:35.412644'),
+('naveensrinivas@protonmail.com', 'Rithvik Senthil', 'College Of Engineering, Guindy', 'Student', 1000000001, '6eea9b7ef19179a06954edd0f6c05ceb', '6035460eed12ff7e992a845f29112c5c', 1, '2021-07-06 15:01:57.302020');
 
 --
 -- Indexes for dumped tables
