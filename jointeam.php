@@ -48,16 +48,16 @@ if(isset($_POST['submit'])){
 
     }
     else{ 
-        echo mysqli_error($conn);
-        echo"<script>alert('Invalid Team Name. Try again.')</script>" ; 
-        echo"<script>document.location='jointeam.php'</script>" ; 
+        //echo mysqli_error($conn);
+        $error = 'Invalid Team Name. Try again.' ; 
+        //echo"<script>document.location='jointeam.php'</script>" ; 
     }
 }
 
 
 ?>
 
-
+<!--
 <html>
 <!DOCTYPE html>
 <html>
@@ -83,4 +83,25 @@ if(isset($_POST['submit'])){
             </table>
         </form>
     </body>
-</html>
+</html>-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reset Password</title>
+        <link rel="stylesheet" type="text/css" href="1Level/style2.css">
+    </head>
+    <body>
+        <form method="POST" action="" autocomplete="off">
+        <div class="form">
+            <h2>JoinTeam</h2>
+            <p style="color:red; line-height: 120%; "> <?php  echo $error ; ?> </p>
+            <div class="email">
+            <label for="Keycode">Keycode : </label><br>
+            <input type="Text" id="Keycode" name='Keycode' required ><br>
+            </div>
+            <button type="submit" name="submit" id="submit-button">Join Team</button>
+        </div> 
+        </form>
+    </body>
+ </html> 

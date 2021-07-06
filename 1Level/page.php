@@ -33,7 +33,7 @@ if(isset($_GET['Vkey'])){
 
 
              
-            echo "Your account has been created successfully, you may now login." ;       
+            $error .=  "Your account has been created successfully, you may now login." ;       
 
             //$tablename = "P_".$pnum;
             //$sql = "CREATE TABLE $tablename ( sno int(4) NOT NULL,date DATE, filename varchar(100), dname varchar(100), dnum varchar(20), PRIMARY KEY (sno))";
@@ -44,7 +44,7 @@ if(isset($_GET['Vkey'])){
             echo $conn->error ; 
         }
     }else { 
-        echo "This account invalid or already verified. " ; 
+        $error .= "This account invalid or already verified. " ; 
     }
 
 }else{ 
@@ -70,8 +70,8 @@ if(isset($_GET['Vkey'])){
 
     <body>
         <div class="form">
-            <h2>About the App</h2>
-            <p>An app coded to fix the pitfalls of Microsoft Teams.</p>
+            <h2>Verification Status</h2>
+            <p><?php echo $error ?></p>
         
             <button type="button" onclick="location.href='login.php'" id="submit-button">Login</button>
         </div> 

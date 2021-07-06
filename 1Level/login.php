@@ -42,12 +42,12 @@ if ( isset($_POST['submit'])){
             header('location:../mainlobby.php');
         }
         else{ 
-            echo "This account needs to be verified. Mail : '$em_database' Date Created : '$createdDate'."; 
+            $error =  "This account needs to be verified.<br>Mail : '$em_database' <br>Date Created : '$createdDate'."; 
         }
 
     }
     else{
-        echo "<script>alert('Invalid Username or password.')</script>" ; 
+        echo "<script>alert('Invalid Username or password.Try Again.')</script>" ; 
     }
 }
 
@@ -93,13 +93,11 @@ if ( isset($_POST['submit'])){
     <body onload="newCaptcha()">
         
 
-        <?php 
-          echo $error ; 
-        ?>
         <form method="POST" action="" autocomplete="off" onsubmit="return validCaptcha()">
         <div class="form">
             <h2>Where Have You Been?</h2>
             <p>Let's continue eduvating!</p>
+            <p style="color:red; line-height: 120%; "><?php echo $error ; ?></p>
             <div class="email">
             <label for="em">E-mail</label><br>
             <input type = "email" id="em" name="em" required placeholder="abcd@gmail.com"><br>

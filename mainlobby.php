@@ -41,14 +41,14 @@ if( $_SESSION['Category'] == "Student"){
         }
     }
     else{ 
-        echo "<script>alert('You have to join a new team.')</script>" ; 
+        //echo "<script>alert('You have to join a new team.')</script>" ; 
     }
 
     // Creating 
 
 ?>
 
-    <button onclick="location.href='jointeam.php'" >Join Team</button>
+    <button onclick="location.href='jointeam.php'" id="submit-button">Join Team</button>
     
 
 <?php

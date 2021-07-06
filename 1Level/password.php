@@ -33,7 +33,7 @@ if(isset($_POST['submit'])){
         }
     }
     else { 
-        echo "<script>alert('The account doesn't seem to exist.')</script>" ;
+        echo "<script>alert('The account doesn't seem to exist.Redirecting to home page.')</script>" ;
         header('location:resetpassword.php') ; 
     }
 }

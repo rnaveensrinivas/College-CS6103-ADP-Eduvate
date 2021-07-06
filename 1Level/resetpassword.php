@@ -2,6 +2,7 @@
 
 include '../config.php';
 
+
 if( isset($_POST['submit'])){ //Checking if the form is submitted. 
 
     $em= $conn->real_escape_string($_POST["em"]); //getting the mail and sanitiziing it.
