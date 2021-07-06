@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
     <head>
+        <title>Thank You</title>
         <link href="style2.css" rel="stylesheet" type="text/css">
     </head>
     <body>

@@ -33,11 +33,11 @@ if ( isset($_POST['submit'])){
             header('location:../mainlobby.php');
         }
         else{ 
-            $error = "This account needs to be verified.<br>Mail: '$em_database'<br>Date Created : '$createdDate'. "; 
+            $error .= "This account needs to be verified.<br>Mail: '$em_database'<br>Date Created : '$createdDate'. "; 
         }
     }
     else{
-        $error = "Invalid Username or password. Try Again. " ; 
+        $error .= "Invalid Username or password. Try Again. " ; 
     }
 }
 $conn->close() ; 
@@ -47,7 +47,7 @@ $conn->close() ;
 <html>
 
     <head>
-        <title>Login page</title>
+        <title>Login</title>
         <link rel="stylesheet" type="text/css" href="style2.css">
         <script src="validation.js"></script>
     </head>

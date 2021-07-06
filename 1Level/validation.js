@@ -35,12 +35,19 @@ function validCaptcha(){
 }
 
 function checkPassword() {
+    
     var p1 = document.getElementById("pwd1").value;
     var p2 = document.getElementById("pwd2").value;
 
-    if(p1 != p2) {
-        alert("Passwords don't match");
+    if( p1 && p2 ){ 
+        if(p1 != p2) {
+            alert("Passwords don't match");
+            return false ; 
+        }
+        return true ;
+    }
+    else{ 
         return false ; 
     }
-    return true ; 
+     
 }

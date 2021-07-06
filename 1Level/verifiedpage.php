@@ -44,7 +44,7 @@ if(isset($_GET['Vkey'])){ //To prevent Invalid Entry.
 ?>
 <html>
     <head>
-        <title>Invalid</title>
+        <title>Invalid </title>
         <link rel="stylesheet" type="text/css" href="style2.css">
     </head>
     <body>
