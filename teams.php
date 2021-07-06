@@ -11,7 +11,7 @@ $PrintTeamName = substr($teams,0,-11) ;
 <!DOCTYPE html>
 <html>
     <head>
-        <title><?php echo$_SESSION['PrintTeamName'] ?></title>
+        <title><?php echo$PrintTeamName ?></title>
         <link rel="stylesheet" type="text/css" href="1Level/style2.css">
     </head>
     <body>
