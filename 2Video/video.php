@@ -8,7 +8,7 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
-	<body>
+	<body style="background-color: rgb(95, 108, 255);">
 		<div class="container-fluid p-0">
 			<div id="main-container">
 				<div id="screen-share-btn-container" class="col-2 float-right text-right mt-2">
@@ -102,7 +102,9 @@
 			initClientAndJoinChannel(agoraAppId, token, channelName, uid);
 		});
 	</script>
-	<script src="ui.js"></script>
+	<!--<script src="ui.js"></script>-->
+	<?php include('ui.php') ?>
+
 	<script src="agora-interface.js"></script>
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </html>

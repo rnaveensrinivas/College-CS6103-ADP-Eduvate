@@ -1,4 +1,11 @@
-// UI buttons
+<?php
+session_start();
+?>
+
+<html>
+
+<script>
+
 function enableUiControls(localStream) {
 
   $("#mic-btn").prop("disabled", false);
@@ -20,8 +27,8 @@ function enableUiControls(localStream) {
     if(screenShareActive){
       stopScreenShare();
     } else {
-      var agoraAppId = $('#form-appid').val();
-      var channelName = $('#form-channel').val();
+      var agoraAppId = "59254f5c7d294821abdc103716a2417c";
+			var channelName = "<?php echo $_SESSION['TeamName'] ; ?>";
       initScreenShare(agoraAppId, channelName); 
     }
   });
@@ -106,3 +113,6 @@ function toggleVideo(localStream) {
     toggleVisibility("#no-local-video", true); // show the user icon when video is disabled
   }
 }
+</script>
+
+</html>
