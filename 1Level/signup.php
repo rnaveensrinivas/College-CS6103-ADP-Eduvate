@@ -52,7 +52,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
       $to = $em ; 
       $subject = "Email Verification." ; 
       // I am sending $vkey along with the page in mail.
-      $message = "<p> Hi thanks for signing up with Eduvate to Verify your account please click <a href='http://localhost/Eduvate-app/1Level/page.php?Vkey=$Vkey'>Here</a></p>" ; 
+      $message = "<p> Hi thanks for signing up with Eduvate to Verify your account please click <a href='http://localhost/Eduvate-app/1Level/verifiedpage.php?Vkey=$Vkey'>Here</a></p>" ; 
       $headers = "From: appeduvate@gmail.com \r\n" ; //App i am send form. 
       $headers .= "MIME-Version: 1.0" . "\r\n" ; // \r - return carriage || \n - newline 
       $headers .= "Content-type:text/html;charset=UTF-8". "\r\n" ; 

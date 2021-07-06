@@ -1,16 +1,16 @@
 <?php
 include('../config.php') ; 
-if(isset($_GET['Vkey'])){
+if(isset($_GET['Vkey'])){ //To prevent Invalid Entry.
     //Process Verification. 
 
     $Vkey = $_GET['Vkey'] ; 
 
     $resultSet = $conn->query("SELECT Verified,Vkey FROM users WHERE Verified = 0 AND Vkey = '$Vkey' LIMIT 1"); 
+    //LIMIT 1 => returns only one row if true.
     
-
-    if( $resultSet->num_rows){ 
+    if( $resultSet->num_rows){ //If it is not verfied.
         //Validate The email. 
-        $update = $conn->query("UPDATE users SET Verified = 1 where Vkey = '$Vkey' LIMIT 1 ") ; 
+        $update = $conn->query("UPDATE users SET Verified = 1 where Vkey = '$Vkey' LIMIT 1 ") ;
 
         if($update){ 
             $resultSet = $conn->query("SELECT * FROM users WHERE Vkey = '$Vkey' LIMIT 1"); 
@@ -19,51 +19,52 @@ if(isset($_GET['Vkey'])){
             $Category = $row["Category"] ; 
 
             if( $Category == "Student"){ 
-                
                 //Creating a dedicated table for the the student only.
 
-                $tablename = "s" . $tablename ; 
+                $tablename = "S" . $tablename ; 
                 $run1 = mysqli_query($conn,"CREATE TABLE $tablename(TeamName varchar(45) PRIMARY KEY , Keycode varchar(10))");    
                 
-                if(!$run1){
-                    echo mysqli_error($conn);
-                } 
+                //if(!$run1){
+                //    echo mysqli_error($conn);
+                //} 
 
             }
-
-
-             
-            $error .=  "Your account has been created successfully, you may now login." ;       
-
-            //$tablename = "P_".$pnum;
-            //$sql = "CREATE TABLE $tablename ( sno int(4) NOT NULL,date DATE, filename varchar(100), dname varchar(100), dnum varchar(20), PRIMARY KEY (sno))";
-            //$run1 = mysqli_query($conn,$sql);
-    
+            $error .=  "Your account has been verified, you may now login." ;          
         }
         else{ 
-            echo $conn->error ; 
+            //echo $conn->error ; 
+            $error = "Couldn't verify account. ";
         }
     }else { 
         $error .= "This account invalid or already verified. " ; 
     }
 
 }else{ 
-    die("Something went wrong. Invalid access detected.") ; 
+    //Invalid access detected.
+?>
+<html>
+    <head>
+        <title>Invalid</title>
+        <link rel="stylesheet" type="text/css" href="style2.css">
+    </head>
+    <body>
+        <div class="form">
+            <h2>Invalid Access Detected</h2>       
+        </div> 
+    </body>
+</html>
+<?php
+    die("") ; 
 }
 
-?>
+$conn->close() ; 
 
-<!--<!doctype html>
-<html>
-    <body>
-        <button onclick="location.href='login.php'">login</button>
-    </body>
-</html>-->
+?>
 
 <!DOCTYPE html>
 <html>
     <head>
-        <title>About</title>
+        <title>Verify</title>
         <link rel="stylesheet" type="text/css" href="style2.css">
     </head>
 
