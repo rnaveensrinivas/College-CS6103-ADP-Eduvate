@@ -57,6 +57,7 @@ else{
     die("") ; 
 }
 
+$conn->close() ; 
 ?>
 
 <!DOCTYPE html>

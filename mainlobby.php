@@ -1,20 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>About</title>
+        <title>Eduvate</title>
         <link rel="stylesheet" type="text/css" href="1Level/style2.css">
     </head>
 
 
     <body>
+        <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="float:right;">Sign Out</button>
+
         <div class="form">
             <h2>Welcome to your online classroom</h2>
-            <p></p>
-        
-            <!--<button type="button" onclick="location.href='../index.html'" id="submit-button">Homepage</button> -->
-   
-
-
 
 <?php
 
@@ -26,7 +22,7 @@ if( $_SESSION['Category'] == "Student"){
 
     //To get the student table name. 
     $tablename = $_SESSION['CollegeID'] ; 
-    $tablename = "s" . $tablename ; 
+    $tablename = "S" . $tablename ; 
     $_SESSION['studenttablename'] = $tablename ; 
 
     //For displaying all the teams they have enrolled in. 
@@ -44,17 +40,15 @@ if( $_SESSION['Category'] == "Student"){
         //echo "<script>alert('You have to join a new team.')</script>" ; 
     }
 
-    // Creating 
-
+    //Joining team below. 
 ?>
 
     <button onclick="location.href='jointeam.php'" id="submit-button">Join Team</button>
-    
 
 <?php
 
 }   // Displaying teacher main lobby
-else { 
+else if( $_SESSION['Category'] == "Teacher"){ 
       
     $CollegeID  = $_SESSION['CollegeID'] ; 
 
@@ -69,24 +63,21 @@ else {
             //Joining a specific team page. And we are passing the team name using GET to that teams page.
         }
     }
-
+    //creating team below. 
 ?>
 
     <button onclick="location.href='createteam.php'" id='submit-button'>Create Team</a></button>
 
 <?php
 
+}else{ 
+//Invalid access detected.
+$conn->close();
+header("location:index.html") ; 
+
 }
 
 ?>
-
-<!--<!DOCTYPE html>
-<html>
-    <body>
-        <h1>Welcome to your online classroom</h1>
-    </body>
-</html>-->
-
 
         </div> 
     </body>

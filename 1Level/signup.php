@@ -50,7 +50,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
       //Sending Email Verification.
     
       $to = $em ; 
-      $subject = "Email Verification." ; 
+      $subject = "Account Verification." ; 
       // I am sending $vkey along with the page in mail.
       $message = "<p> Hi thanks for signing up with Eduvate to Verify your account please click <a href='http://localhost/Eduvate-app/1Level/verifiedpage.php?Vkey=$Vkey'>Here</a></p>" ; 
       $headers = "From: appeduvate@gmail.com \r\n" ; //App i am send form. 
@@ -59,7 +59,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
       mail($to , $subject , $message, $headers) ; 
 
-      header('location:thankyou.php');//Where do you want to send them to after verification. 
+      header('location:thankyou.php?Status=Sent');//Where do you want to send them to after verification. 
     }  
   }
   $conn->close();

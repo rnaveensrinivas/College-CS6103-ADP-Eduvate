@@ -1,3 +1,11 @@
+<?php
+
+if($_GET['Status'] != "Sent"){ 
+    header("location:../index.html") ; 
+}
+
+?>
+
 <!doctype html>
 <html>
     <head>

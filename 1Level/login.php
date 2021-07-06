@@ -77,6 +77,22 @@ $conn->close() ;
                 <!-- Below validate captcha is not working. -->
                 <button type="submit" onclick="return validCaptcha()" name="submit" id="submit-button">Login</button>
                 <p style="font-size :15px; " >New User ? <a href="signup.php" style="text-decoration:none; font-size: 15px;">Sign-Up</a></p>
+
+                <script>
+                    function validCaptcha(){ 
+                        var captcha = document.getElementById('captcha').value ; 
+                        var enteredCaptcha = document.getElementById('enteredCaptcha').value ; 
+                        
+                        if( enteredCaptcha == '' ){ 
+                            alert("Enter the captcha.") ; 
+                            return false ; 
+                        }
+                        else if( captcha != enteredCaptcha ){ 
+                            alert("Wrong captcha Try again.") ; 
+                            return false ; 
+                        }
+                    }
+                </script>
             </div> 
         </form>
     </body>
