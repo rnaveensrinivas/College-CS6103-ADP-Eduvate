@@ -8,5 +8,5 @@ unset($_SESSION['Category']) ;
 //unset($_SESSION['TeamName']) ; 
 //unset($_SESSION['studenttablename']) ; 
 header('location:index.html') ;
-
+session_close() ; 
 ?> 

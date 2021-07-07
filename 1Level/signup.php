@@ -90,7 +90,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
         </div>
             
         <div class="fname">
-          <label for="fname">First Name</label><br>
+          <label for="fname">Full Name</label><br>
           <input type = "text" id="fname" name="fname" placeholder="Eg: Rithvik Senthil"><br>
         </div>
 
