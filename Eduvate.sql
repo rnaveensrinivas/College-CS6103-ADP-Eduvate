@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 06, 2021 at 05:08 PM
+-- Generation Time: Jul 07, 2021 at 01:37 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.6
 
@@ -20,6 +20,38 @@ SET time_zone = "+00:00";
 --
 -- Database: `eduvate`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `s1000000001`
+--
+
+CREATE TABLE `s1000000001` (
+  `TeamName` varchar(45) NOT NULL,
+  `Keycode` varchar(10) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `s1000000001`
+--
+
+INSERT INTO `s1000000001` (`TeamName`, `Keycode`) VALUES
+('TEST1_1000000000', 'a5a456f536');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teams`
+--
+
+CREATE TABLE `teams` (
+  `TeamName` varchar(45) NOT NULL,
+  `TeacherName` varchar(45) NOT NULL,
+  `TeacherID` bigint(10) NOT NULL,
+  `Keycode` varchar(10) NOT NULL,
+  `CreatedDate` timestamp(6) NOT NULL DEFAULT current_timestamp(6) ON UPDATE current_timestamp(6)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -50,6 +82,18 @@ INSERT INTO `users` (`Email`, `FullName`, `College`, `Category`, `CollegeID`, `P
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `s1000000001`
+--
+ALTER TABLE `s1000000001`
+  ADD PRIMARY KEY (`TeamName`);
+
+--
+-- Indexes for table `teams`
+--
+ALTER TABLE `teams`
+  ADD PRIMARY KEY (`TeamName`);
 
 --
 -- Indexes for table `users`
