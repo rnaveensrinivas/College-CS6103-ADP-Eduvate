@@ -55,8 +55,9 @@ else{
 
     <body>
         
-        <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="float:right;">Sign Out</button>
-
+    <div class="logout">
+        <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="background-color: white; color:rgb(95, 108, 255);">Sign Out</button>
+        </div>
         <form method="POST" action="" autocomplete="off">
             <div class="form">
                 <h2>Create Team</h2>

@@ -65,7 +65,9 @@ else{
         <link rel="stylesheet" type="text/css" href="1Level/style2.css">
     </head>
     <body>
-        <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="float:right;">Sign Out</button>        <form method="POST" action="" autocomplete="off">
+    <div class="logout">
+        <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="background-color: white; color:rgb(95, 108, 255);">Sign Out</button>
+        </div>
         <div class="form">
             <h2>JoinTeam</h2>
             <p style="color:red; line-height: 120%; "> <?php  echo $error ; ?> </p>

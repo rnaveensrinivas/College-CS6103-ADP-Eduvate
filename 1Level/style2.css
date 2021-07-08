@@ -122,3 +122,10 @@ input[type=radio] {
     /*do not use size; use width and height*/
     display: inline;
 }
+
+.logout{
+    width:10%;
+    position: fixed;
+    top:2px;
+    right: 0;
+}
