@@ -70,7 +70,7 @@
 			-->
           </div>
           <div class="modal-footer d-flex justify-content-center">
-            <button id="join-channel" class="btn btn-default">Join Channel</button>
+            <button id="join-channel" class="btn btn-default">Join Video Call</button>
           </div>
         </div>
       </div>

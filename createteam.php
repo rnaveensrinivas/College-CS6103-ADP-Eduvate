@@ -49,7 +49,7 @@ else{
 <html>
 
     <head>
-        <title>Reset Password</title>
+        <title>Create Team</title>
         <link rel="stylesheet" type="text/css" href="1Level/style2.css">
     </head>
 
