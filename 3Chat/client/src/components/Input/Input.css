@@ -2,28 +2,38 @@
 
 .form {
     display: flex;
-    border-top: 2px solid #D3D3D3;
+    /* border-top: 2px solid #e2e2e2; */
   }
   
   .input {
-    border: none;
-    border-radius: 0;
+    border: 2px solid rgb(213, 213, 213);
+    border-radius: 7px;
     padding: 5%;
-    width: 80%;
+    width: 70%;
     font-size: 1.2em;
+    font-family: "Poppins", sans-serif;
   }
-  
+ 
   input:focus, textarea:focus, select:focus{
     outline: none;
+
   }
   
   .sendButton {
-    color: #fff !important;
+    color: rgb(255, 255, 255);
     text-transform: uppercase;
     text-decoration: none;
-    background: #2979FF;
-    padding: 20px;
+    background-color: rgb(95, 108, 255);
+    padding: 15px;
     display: inline-block;
     border: none;
+    margin-bottom: 20px;
+    margin-right: 20px;
     width: 20%;
+    height: 54px;
   }
+  * {/*to set the captcha button to same width as the input field*/
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
