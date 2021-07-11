@@ -20,7 +20,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
         mail($to , $subject , $message, $headers) ; 
 
-        header('location:thankyou.php');
+        header('location:thankyou.php?Status=Sent');
     } 
     else{    
         $error .= "The entered email is invalid." ; 
