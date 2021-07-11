@@ -29,10 +29,9 @@ else{
     </head>
 
     <body>
-        
-            <div class="logout">
+        <div class="logout">
             <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="background-color: white; color:rgb(95, 108, 255);">Sign Out</button>
-            </div>
+        </div>
         <div class="form">
             <h2>Welcome to <?php echo $PrintTeamName; ?> </h2>
             <p style="line-height:120%;"> To allow users to join this channel refer below <br>KeyCode: <?php if( $_SESSION['Category'] == "Teacher"){echo $Keycode ;}?> </p>

@@ -65,18 +65,19 @@ else{
         <link rel="stylesheet" type="text/css" href="1Level/style2.css">
     </head>
     <body>
-    <div class="logout">
-        <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="background-color: white; color:rgb(95, 108, 255);">Sign Out</button>
+        <div class="logout">
+            <button type="button" onclick="location.href='logout.php'" name="Logout" id="submit-button" style="background-color: white; color:rgb(95, 108, 255);">Sign Out</button>
         </div>
-        <div class="form">
-            <h2>JoinTeam</h2>
-            <p style="color:red; line-height: 120%; "> <?php  echo $error ; ?> </p>
-            <div class="email">
-            <label for="Keycode">Keycode : </label><br>
-            <input type="Text" id="Keycode" name='Keycode' required ><br>
-            </div>
-            <button type="submit" name="submit" id="submit-button">Join Team</button>
-        </div> 
+        <form action="" method="POST" autocorrect="OFF">
+            <div class="form">
+                <h2>JoinTeam</h2>
+                <p style="color:red; line-height: 120%; "> <?php  echo $error ; ?> </p>
+                <div class="email">
+                <label for="Keycode">Keycode : </label><br>
+                <input type="Text" id="Keycode" name='Keycode' required ><br>
+                </div>
+                <button type="submit" name="submit" id="submit-button">Join Team</button>
+            </div> 
         </form>
     </body>
  </html> 
