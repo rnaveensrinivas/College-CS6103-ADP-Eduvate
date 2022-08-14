@@ -1,16 +1,20 @@
-
+/* comes with Agora API */
+/*Multistream - multiple stream on the different rooms. So multiple videos can run simulatoenously*/
+/*Way the different buttons are desinged*/
 #buttons-container {
   position: absolute;
   z-index: 2;  
   width: 100vw;
 }
 
+/*getting the picture to fill the page. */
 #full-screen-video {
   position: absolute;
   width: 100vw;
   height: 100vh;
 }
 
+/*For yourself frame*/
 #lower-video-bar {
   height: 20vh;
 }
@@ -43,6 +47,7 @@
   max-width: 500px;
 }
 
+/* is for mute button, different color and icon. */
 #mute-overlay {
   position: absolute;
   z-index: 2;
@@ -54,6 +59,7 @@
   display: none;
 } 
 
+/* another overlap. One is for mute and another is for unmute. */
 .mute-overlay {
   position: absolute;
   z-index: 2;

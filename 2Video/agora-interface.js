@@ -1,5 +1,9 @@
 /*
  * JS Interface for Agora.io SDK
+//This is given by agora, which is need for implementing all the necessary for the working. 
+//gives the implementation of all js functions in video.php and ui.php
+//Don't change anything in here. 
+
  */
 
 // video profile settings
