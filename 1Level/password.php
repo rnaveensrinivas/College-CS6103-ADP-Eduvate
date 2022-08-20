@@ -1,10 +1,13 @@
 <?php
-include('../config.php') ; 
+include('../config.php') ; //establishing a connection.
 
-if( isset($_GET['em']) ){ // To prevenet invalid entry.
-    if(isset($_POST['submit'])){
-        $em = $_GET['em'] ; 
+if( isset($_GET['em']) ){ 
+    // To prevenet invalid entry.
 
+    if(isset($_POST['submit'])){//if the form has been submitted.
+        $em = $_GET['em'] ; //getting the email.
+
+        //checking if the mail exists, what if the user manipulates the URL.
         $checkMailIfExists = "SELECT * FROM users WHERE Email = '$em' LIMIT 1"; 
         $mailResult = mysqli_query($conn , $checkMailIfExists) ; 
 
@@ -13,13 +16,14 @@ if( isset($_GET['em']) ){ // To prevenet invalid entry.
             $pwd1 = $_POST['pwd1'] ; 
             $pwd2 = $_POST['pwd2'] ; 
 
-            if( $pwd1 != $pwd2){ 
+            if( $pwd1 != $pwd2){ //server side verification.
                 echo "<script>alert('The Passwords do not match. Try again.')</script>" ; 
             }
             else{ 
                 $pwd1= $conn->real_escape_string($pwd1);//sanitizing
                 $pwd1 = md5($pwd1); //encrypting
   
+                
                 $updatePassword = "UPDATE users SET Password1 = '$pwd1' where Email = '$em' " ; 
                 $result = mysqli_query($conn , $updatePassword) ; 
 
@@ -27,12 +31,14 @@ if( isset($_GET['em']) ){ // To prevenet invalid entry.
                     echo "<script>alert('The password has been changed succefully you may now login.'); document.location='login.php'</script>" ;
                 }
                 else{ 
+                    //Some DB error has occured. 
                     echo "<script>alert('Something went wrong. Try again.')</script>" ; 
                     header('location:password.php') ; 
                 }
             }
         }
         else { 
+            //When the some random user tries to sniff the GET URL.
             echo "<script>alert('The account doesn't seem to exist.Redirecting to Reset Password Page.')</script>" ;
             header('location:resetpassword.php') ; 
         }

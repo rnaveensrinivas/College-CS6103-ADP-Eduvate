@@ -1,9 +1,13 @@
 <?php
+//This page is accessed only from email. 
+//When signup this page is passed to the user through mail.
+
 include('../config.php') ; 
+
 if(isset($_GET['Vkey'])){ //To prevent Invalid Entry.
     //Process Verification. 
 
-    $Vkey = $_GET['Vkey'] ; 
+    $Vkey = $_GET['Vkey'] ; //Getting the vkey from the url.
 
     $resultSet = $conn->query("SELECT Verified,Vkey FROM users WHERE Verified = 0 AND Vkey = '$Vkey' LIMIT 1"); 
     //LIMIT 1 => returns only one row if true.
@@ -13,10 +17,12 @@ if(isset($_GET['Vkey'])){ //To prevent Invalid Entry.
         $update = $conn->query("UPDATE users SET Verified = 1 where Vkey = '$Vkey' LIMIT 1 ") ;
 
         if($update){ 
+
+            //Getting that particular user details.
             $resultSet = $conn->query("SELECT * FROM users WHERE Vkey = '$Vkey' LIMIT 1"); 
             $row = mysqli_fetch_assoc($resultSet) ; 
-            $tablename = $row["CollegeID"] ; 
-            $Category = $row["Category"] ; 
+            $tablename = $row["CollegeID"] ; //getting their college ID
+            $Category = $row["Category"] ; //category denotes wheather they're teacher or student.
 
             if( $Category == "Student"){ 
                 //Creating a dedicated table for the the student only.
@@ -73,6 +79,7 @@ $conn->close() ;
         <div class="form">
             <h2>Verification Status</h2>
             <p><?php echo $error ?></p>
+            <!-- Prompting the user that their account validation is complete. -->
         
             <button type="button" onclick="location.href='login.php'" id="submit-button">Login</button>
         </div> 

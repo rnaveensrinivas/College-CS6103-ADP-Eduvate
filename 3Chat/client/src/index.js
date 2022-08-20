@@ -1,6 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
+//this page renders app.js.
+
+//calling that root in that div seciton. 
 ReactDOM.render (<App />, document.querySelector('#root'));
 //index.html in public directory
 //react is going to import the code into the single div element that contains the 

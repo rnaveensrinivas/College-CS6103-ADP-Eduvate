@@ -27,11 +27,16 @@ if( $_SESSION['Category'] == "Student"){
     $_SESSION['studenttablename'] = $tablename ; 
 
     //For displaying all the teams they have enrolled in. 
+    //Here we're querying the students' dedicated table. 
+    //For teacher we will query team table.  
     $selectAllTeamNames = "SELECT * FROM $tablename " ; 
     if ( $result = mysqli_query( $conn, $selectAllTeamNames ) ) { 
         while ( $row = mysqli_fetch_assoc($result) ) { 
+
             $teams = $row['TeamName'] ; 
-            $PrintTeamName = substr($teams,0,-11) ;
+            $PrintTeamName = substr($teams,0,-11) ;//-11 denotes the ending index.
+            //Team name stored in DB is TEAMNAME_1000000000 ; last eleven are abstracted from user.
+
             echo "<h3>Team : $PrintTeamName "; 
             echo "<a href='teams.php?TeamName=$teams' id='submit-button'><button> Join </button></a></h3>" ;
             //Joining a specific team page. And we are passing the team name using GET to that teams page.

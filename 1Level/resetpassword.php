@@ -1,6 +1,6 @@
 <?php
 
-include '../config.php';
+include '../config.php'; //establishing a connection.
 
 if( isset($_POST['submit'])){ //Checking if the form is submitted. 
 
@@ -12,7 +12,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
     if( $mailResult->fetch_assoc()){
         $to = $em ; 
         $subject = "Reset Password." ; 
-        // I am sending $vkey along with the page in mail.
+        //sending $em along with the page in mail.
         $message = "<p>Hi thanks for approaching Eduvate support to change account password please click <a href='http://localhost/Eduvate-app/1Level/password.php?em=$em'>Here</a></p>" ; 
         $headers = "From: appeduvate@gmail.com \r\n" ; //App i am send form. 
         $headers .= "MIME-Version: 1.0" . "\r\n" ; // \r - return carriage || \n - newline 
@@ -20,7 +20,7 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
         mail($to , $subject , $message, $headers) ; 
 
-        header('location:thankyou.php?Status=Sent');
+        header('location:thankyou.php?Status=Sent'); //re-directing to sent mail page. 
     } 
     else{    
         $error .= "The entered email is invalid." ; 

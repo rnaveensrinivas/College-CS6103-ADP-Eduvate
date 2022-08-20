@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+/* We're including the font form google api.*/
 h2 {
     font-weight: 400;
     margin-bottom: 35px;
@@ -45,7 +46,7 @@ body {
      font-family: "Poppins", sans-serif;
      color: rgb(112, 112, 112);
      margin: auto;
-     display: block; /*lines 41 and 42 align the input fields in the center*/
+     display: block; /* align the input fields in the center*/
 
  }
  
@@ -54,7 +55,7 @@ body {
      color: rgb(112, 112, 112);
  }
 
- input:focus { /*removes the automatic blue highlight*/
+ input:focus { /*removes the automatic blue highlight on all types of inputs like textboxes,radio..etc.*/
      outline: none;
      border-color:#91D6FF ;
      box-shadow: 0 0 5px #91D6FF;
@@ -76,6 +77,7 @@ body {
      color: rgb(198, 198, 198);
  }
 
+ /*Used in displaying captcha. Where the captcha will be displayed, that box.*/
  #cap {
      font-size: 17px;
      padding: 5px;
@@ -83,6 +85,7 @@ body {
      width: 100%;
      margin-bottom: 10px;
  }
+
  #submit-button {
      width: 100%;
 }
@@ -92,12 +95,15 @@ p {
     font-size: 15px;
     line-height: 15px;
 }
+
+/*The below code is for center alignment*/
 * {/*to set the captcha button to same width as the input field*/
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
 
+/*Button animations below*/
 button {
     transition-duration: 0.4s;
   }
@@ -106,6 +112,8 @@ button:hover {
     background-color: #3c52b6;
     color: rgb(255, 255, 255);
 }
+
+/*Captcha box details below*/
 .searchBox{
   background-image:url('captchabg.jpeg');
   background-size: 100%; /*sets the background image size to full*/
@@ -116,6 +124,7 @@ button:hover {
   font-size:25px;
   color: black;
 }
+
 input[type=radio] {
     width: 15px;
     height: 15px;

@@ -1,5 +1,5 @@
 <?php 
-
+//Here we're just logging out. 
 session_start() ; 
 unset($_SESSION['CollegeID']) ; 
 //unset($_SESSION['Password1']) ; 

@@ -2,13 +2,17 @@
 session_start() ; 
 include 'config.php' ; 
 
-if( isset($_SESSION['Category'])){
+if( isset($_SESSION['Category'])){ //making sure only a valid person can access. 
+    //But not checking if it is a student or teacher. 
+    //This has to be fixed. 
+
     if(isset($_POST['submit'])){ 
 
         $TeacherID = $_SESSION['CollegeID'] ; 
         $TeamName = $_POST['TeamName'] ;
         $TeamName .= "_" ; 
         $TeamName .= $TeacherID ; //So that the team names for a teacher remains unique.
+        //Since there is a possibility that multiple teacher can handle the same course.
 
         //Checking if the class exists or not. 
         $query = "SELECT * FROM teams WHERE TeamName = '$TeamName' " ; 
@@ -41,6 +45,7 @@ if( isset($_SESSION['Category'])){
     $conn->close();
 }
 else{ 
+    //invalid access detected. 
     header("location:index.html") ; 
 }
 ?>

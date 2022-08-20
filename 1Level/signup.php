@@ -1,8 +1,11 @@
 <?php
-include '../config.php';
+include '../config.php'; //establishing a connection. 
 
 if( isset($_POST['submit'])){ //Checking if the form is submitted. 
 
+  //first we're getting only these details. 
+  //To check if the user already exists. 
+  //Or any of unique fields already exists. 
   $em=$_POST["em"];
   $uid=$_POST["uid"];
   $pwd1=$_POST["pwd1"]; 
@@ -10,10 +13,12 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
   $checkMailIfExists = "SELECT * FROM users WHERE Email = '$em'" ; //Checking if email already exists. 
   $checkCollegeIDIfExists = "SELECT * FROM users WHERE CollegeID = '$uid'" ; //Checking if College ID already exists. 
+  
   $mailResult = mysqli_query($conn , $checkMailIfExists) ; 
   $collegeIDResult =  mysqli_query($conn , $checkCollegeIDIfExists) ; 
 
 
+  //Check if any record already exists with current credentials. 
   if( $mailResult->fetch_assoc()){
     echo "<script>alert('This Email already exists. Go to login page.')</script>" ; 
   }
@@ -30,7 +35,8 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
     $col=$_POST["col"];
     $categ=$_POST["categ"];
 
-    //sanitize form data. - removes all illegal form data.
+    //sanitize form data. - removes all illegal form character which may not be recognized by the SQL character set. 
+    //converting them to sql string from given string. 
     $em= $conn->real_escape_string($em);
     $fname=$conn->real_escape_string($fname);
     $col=$conn->real_escape_string($col);
@@ -48,12 +54,14 @@ if( isset($_POST['submit'])){ //Checking if the form is submitted.
 
     if ($conn->query($insert)) { 
       //Sending Email Verification.
+
+      //Below is achieved via php mailer present in PHP xampp folder.
     
       $to = $em ; 
       $subject = "Account Verification." ; 
       // I am sending $vkey along with the page in mail.
       $message = "<p> Hi thanks for signing up with Eduvate to Verify your account please click <a href='http://localhost/Eduvate-app/1Level/verifiedpage.php?Vkey=$Vkey'>Here</a></p>" ; 
-      $headers = "From: appeduvate@gmail.com \r\n" ; //App i am send form. 
+      $headers = "From: appeduvate@gmail.com \r\n" ; //App i am sending form. 
       $headers .= "MIME-Version: 1.0" . "\r\n" ; // \r - return carriage || \n - newline 
       $headers .= "Content-type:text/html;charset=UTF-8". "\r\n" ; 
 

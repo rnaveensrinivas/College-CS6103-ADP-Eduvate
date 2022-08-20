@@ -3,17 +3,19 @@ session_start() ;
 include 'config.php' ; 
 
 if( isset($_SESSION['CollegeID'])){
-    $teams = $_GET['TeamName'] ;
-    $_SESSION['TeamName'] = $_GET['TeamName'] ; // This is for video calling. 
+    $teams = $_GET['TeamName'] ; //we came to this page from mainlobby. So, when an user clicks a particular team, they're redirected here. 
+    $_SESSION['TeamName'] = $_GET['TeamName'] ; // This is for video calling. so we're passing it as session variable.
 
     if( $_SESSION['Category'] == "Teacher"){ 
+
+        //If the user is a teacher, then display the keycode for this team using which students can enroll here. 
         $getKeycode = "SELECT * FROM teams WHERE TeamName = '$teams'"; 
         $result = mysqli_query($conn , $getKeycode) ; 
         $row = $result->fetch_assoc() ; 
-        $Keycode = $row['Keycode'] ; 
+        $Keycode = $row['Keycode'] ; //We're just getting the keycode here. 
     }
 
-    $PrintTeamName = substr($teams,0,-11) ;
+    $PrintTeamName = substr($teams,0,-11) ; //getting the team variable ready, we will be putting this in HTML below. 
     $conn->close();
 }
 else{ 
@@ -34,7 +36,10 @@ else{
         </div>
         <div class="form">
             <h2>Welcome to <?php echo $PrintTeamName; ?> </h2>
-            <p style="line-height:120%;"> To allow users to join this channel refer below <br>KeyCode: <?php if( $_SESSION['Category'] == "Teacher"){echo $Keycode ;}?> </p>
+            <?php if( $_SESSION['Category'] == "Teacher"){ ?>
+                <p style="line-height:120%;"> To allow users to join this channel refer below <br>KeyCode:  </p>
+            <?php echo $Keycode ;}?>
+            
             <button type="button" onclick="location.href='2Video/video.php'" id="submit-button" style="width:50% ; height:100% ; float:right; " >Video Call</button>
             <a href="https://60ea725ba5133508bfa1b273--ecstatic-galileo-ebbce8.netlify.app/"> <button type="button"  id="submit-button" style="width:50% ; height:100% ; float:left; " >Group Chat</button></a>
         </div>

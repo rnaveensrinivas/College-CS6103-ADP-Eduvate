@@ -1,5 +1,6 @@
 <?php
 
+//if someone tries to access this page randomly this will redirect them to home page. 
 if($_GET['Status'] != "Sent"){ 
     header("location:../index.html") ; 
 }

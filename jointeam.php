@@ -4,9 +4,14 @@ session_start() ;
 include 'config.php' ; 
 
 if( isset($_SESSION['CollegeID'])){
+
+    //We're checking if this is a valid account or not. 
+    //But we are not checking if this is a student or teacher. 
+    //Teacher shouldn't have acces to this page. 
     if(isset($_POST['submit'])){ 
 
-        $Keycode = $_POST['Keycode'] ;
+        $Keycode = $_POST['Keycode'] ; //getting in the keycode for the team they are willing. 
+        //key code is generated during team creation by the teacher. 
         
         $query = "SELECT * FROM teams WHERE Keycode = '$Keycode' " ; 
         $result = $conn->query($query) ; 
@@ -61,7 +66,7 @@ else{
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Reset Password</title>
+        <title>Reset Password</title><!-- have to fix the name -->
         <link rel="stylesheet" type="text/css" href="1Level/style2.css">
     </head>
     <body>

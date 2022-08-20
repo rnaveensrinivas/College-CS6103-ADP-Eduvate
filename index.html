@@ -1,20 +1,26 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1">
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="home.css">
-        <title>Eduvate</title>
-    </head>
-    <body> 
-        <header class="header">
+
+<head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css"> <!-- including in the CSS file-->
+    <title>Eduvate</title> <!-- tab name-->
+</head>
+
+<body>
+    
+    <!-- below class function takes care of nav bar. -->
+    <header class="header"> <!--present in css, adds a border.-->
         <nav class="navbar">
             <a href="" class="nav-logo" title="Logo.">Eduvate</a>
             <ul class="nav-menu">
+
+                <!-- the below links take control to the respective pages. -->
                 <li class="nav-item">
-                    <a href="1Level/about.html" class="nav-link" title="Origin of the app.">About</a>
+                    <a href="1Level/about.html" class="nav-link" title="Origin of the app.">About</a> 
                 </li>
                 <li class="nav-item">
                     <a href="1Level/login.php" class="nav-link" title="Take me to Login page.">Login</a>
@@ -26,18 +32,20 @@
                     <a href="1Level/contact.html" class="nav-link" title="Reach us.">Contact</a>
                 </li>
             </ul>
+
+            <!-- When the screen is minimized the hamburger bar doesn't work. -->
             <div class="hamburger">
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
             </div>
         </nav>
-        </header>
-        <video class="vid" width="400" autoplay loop>
-            <source src="animated_logo.mp4" type="video/mp4">
-          </video>
+    </header>
+    <video class="vid" width="400" autoplay loop> <!-- video is working at random times only.-->
+        <source src="animated_logo.mp4" type="video/mp4">
+    </video>
 
-    </body>
-    <script src="homepg.js"></script>
+</body>
+<script src="homepg.js"></script> <!-- the script that run on the page. -->
+
 </html>
-
